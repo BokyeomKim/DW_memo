@@ -41,6 +41,8 @@ Create a new repository
 용어>
 git - ls
 Dos - dir
+ip = 집주소와 같은 개념.인터넷을 사용하기위한 주소,유동적 고유번호 x ipconfig
+ip 끝번호 가 호스트 번호 // 동,호수
 
 단축키 >
 윈도우 +방향키 > 동서남북 조절 이 가능하다! 
@@ -48,7 +50,7 @@ Dos - dir
 대문자 입력할때 Shift 입력하면 효율이 좋음.
 
 git config --global user.(이름,메일) ""
-ssh keygen -t rsa -C "mail"
+ssh keygen -t rsa -C "mail" <"C"는 대문자 
 key 생성[SHA256 암호화 방법]
 회사 입사 하면 가장 먼저 해야할것 : 내 PC -보기 - 파일확장명체크 (파일 구별 위한)
 내PC>C드라이브 > 사용자 > .ssh 키 파일 <보관>확장명 체크 해야 볼수 있음.
@@ -64,3 +66,4 @@ git config --global core.autocrlf true//오류 발생시 입력
 git commit -m "나 오늘 공부했어!"
 git push origin master https://github.com/BokyeomKim/DW_memo.git//어떤 사이트에 올릴건지
 git push origin master// 밀다
+★★★형상관리 /서버 /ip /운영체제(소프트웨어)
