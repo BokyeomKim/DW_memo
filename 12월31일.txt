@@ -67,3 +67,6 @@ git commit -m "나 오늘 공부했어!"
 git push origin master https://github.com/BokyeomKim/DW_memo.git//어떤 사이트에 올릴건지
 git push origin master// 밀다
 ★★★형상관리 /서버 /ip /운영체제(소프트웨어)
+내용수정
+git commit -m '아무내용이나'
+git push oringin master
