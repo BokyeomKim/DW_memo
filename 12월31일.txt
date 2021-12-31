@@ -41,11 +41,12 @@ Create a new repository
 용어>
 git - ls
 Dos - dir
+
 단축키 >
 윈도우 +방향키 > 동서남북 조절 이 가능하다! 
-
 방향키로 위쪽 - 한번 더 명령어 가능
 대문자 입력할때 Shift 입력하면 효율이 좋음.
+
 git config --global user.(이름,메일) ""
 ssh keygen -t rsa -C "mail"
 key 생성[SHA256 암호화 방법]
