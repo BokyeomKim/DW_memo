@@ -59,4 +59,12 @@ key 생성[SHA256 암호화 방법]
 
 ssh keys add new
 title
-코드 복붙
+key 코드 복붙
+bash here
+>ls //파일 보임.
+>git init
+>git add .
+git config --global core.autocrlf true//오류 발생시 입력
+git commit -m "나 오늘 공부했어!"
+git push origin master https://github.com/BokyeomKim/DW_memo.git//어떤 사이트에 올릴건지
+git push origin master// 밀다
