@@ -50,7 +50,8 @@ ip 끝번호 가 호스트 번호 // 동,호수
 대문자 입력할때 Shift 입력하면 효율이 좋음.
 
 git config --global user.(이름,메일) ""
-ssh keygen -t rsa -C "mail" <"C"는 대문자 
+ssh keygen -t rsa -C "mail" <"C"는 대문자
+enter > enter 
 key 생성[SHA256 암호화 방법]
 회사 입사 하면 가장 먼저 해야할것 : 내 PC -보기 - 파일확장명체크 (파일 구별 위한)
 내PC>C드라이브 > 사용자 > .ssh 키 파일 <보관>확장명 체크 해야 볼수 있음.
