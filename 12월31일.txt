@@ -55,10 +55,9 @@ enter > enter
 key 생성[SHA256 암호화 방법]
 회사 입사 하면 가장 먼저 해야할것 : 내 PC -보기 - 파일확장명체크 (파일 구별 위한)
 내PC>C드라이브 > 사용자 > .ssh 키 파일 <보관>확장명 체크 해야 볼수 있음.
-
-ssh keys add new
-title
-key 코드 복붙
+.ssh > rsa 파일 메모장 실행 시키기 
+key 코드 복사
+git 으로 돌아와서 키 코드 붙여넣기
 bash here
 >ls //파일 보임.
 >git init
