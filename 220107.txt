@@ -1,0 +1,394 @@
+데이터 베이스 안에는 테이블이 존재한다
+테이블 안에는 저장된 데이터가 존재한다.
+
+
+
+-group by 할때는 
+select 절에 group 이 되는 컬럼이 위치.
+
+selcet
+ <컬럼>
+from <테이블이름>
+where <조건식>
+group by <컬럼 이름>
+having <sum,avg,min,max>
+order by <정렬할 컬럼> desc (or : l ) asc 
+----------------------------------------
+select
+ deptno,
+max(sal) as '급여킹'
+from emp 
+<여기에 where 절 쓰면 문법오류 >
+group  by deptno
+having max(sal) > 5000
+group by 도 컴마 가 가능하다. and 사용x
+---------------------------------------
+★시험) 순서나옵니다.
+(첨 회사 갔는데, 쿼리를 줬을때 보는 순서!)
+
+1.from (항상 처음)
+2.where
+3.group by
+4.having
+5.select
+6.order by (항상 마지막)
+
+-------------------------------------------
+
+연산자는 where 절에 온다.
+관계 연산자 : !=, =,>,<,>=,=<
+논리 연산자 : and , or
+관계 연산자 : like (특정 단어에 단어를 찾고 싶을때.. 이름에 a가 두번, 첫글짜가 L 인 사람 등)
+(like 사용법)
+select
+ ename
+from emp
+where ename like 'A%' ;
+-------------------
+보너스 받은사람)
+select
+ ename,
+ comm
+from emp
+where comm is not null ;
+
+(문제 풀이)
+1)부서별 직책별 최대급여와 인원수, 
+최소급여를 추출
+단,10번 부서 제외하고 ,
+인원수는 3명 이하인 것으로
+인원수가 적은 순서대로 추출
+
+-------------------------------------------------------------------------------------------------------
+1번 문제풀이 
+
+--1. 부서별 직책별 (별 group by 사용 해야한다.)
+--2. 최대 급여 인원수
+--3. 최소급여
+--4. 10번 부서 제외
+--5. 인원수는 3명 이하
+-- 인원수가 적은 순서
+
+--1. 부서별 직책별 (~별 아하 ! group by 사용 해야한다.)
+--2. 최대 급여 인원수, 최소급여 추출(추출 혹은 조회 select)
+--3. 10번 부서 제외(where)
+--4. 인원수는 3명 이하(having!)
+--5. 인원수가 적은 순서(정렬!)
+
+
+select 
+	deptno,
+	job,
+	max(sal),
+	count(*),
+	min(sal)
+	
+	
+
+from emp 
+where deptno != 10
+group by deptno, job 
+having count(*) <=3
+
+order by count(*)  
+
+-----------------------------------------------------------------------------
+2번 문제
+
+--1. 부서별(그룹핑!)
+--2. 급여 합계 추출
+--3. 10,30 부서 여야 함.
+--4.급여합계(sum-having)가 5000인 부서
+
+select  <이거 부터 하지 말것. 
+	deptno,
+	sum(sal) 
+from emp 
+where 
+	deptno = 10
+	or 
+	deptno = 30
+
+
+group by deptno
+
+having sum(sal) >= 5000;
+--------------------------------------------------------------------------------
+3번 문제 풀이
+
+--1)직책별(group)
+--2)급여 합계(sum), 평균(avg) 급여 조회
+--3)job이 manager 제외
+--4) 평균 sal 가 1000 이상 (having)
+
+select 
+	sum(SAL),
+	avg(SAL)
+from emp 
+where job != 'manager'
+group by job
+having avg(SAL) >=1000
+
+
+------------------------------------------------------------------------------------
+
+용어 (다중행 함수)
+--group by
+--sum,avg,min,max,count
+
+----------------------------
+-- 부서별 
+--인원 수와 평균 급여
+
+select 
+	deptno,
+	count(*),
+	avg(sal)
+from emp
+group by deptno
+-----------------------
+
+select 
+
+from emp
+------------------------------------
+ifnull	(comm,100) =  null인 데이터 들에 100 을 넣은 것. update 가 아니라 , 조회 할때 임시로 보이게 하는것 ,null 이 많이 들어가면 좋지 않은 
+
+--------------------------------------------------
+
+220107
+이 명령어는 데이터 베이스 별로 다르다 
+
+ifnull : 데이터가 null 인 행에 임의 데이터 넣는다.
+(데이터를 update 하는게 아님
+select 
+ ifnull(COMM,100 ) **fake!
+from emp 
+
+
+******date_format
+날짜 함수
+
+select
+	date_format(hiredate,)
+
+from emp
+
+select 
+	date_format(hiredate,'%y,%m')  (, / -원하는 걸로 해주면 됨,정해진건 없다.)등 사용 가능 y값을  수정하면 안됨 
+from emp 
+
+-형식을 외울필요 없이 적어놓고 쓰면 된다.
+
+google search : mysql date_format(date 를 포맷할수 있는 방법)
+-----------------------------------------------------
+
+<date_format을 활용한 그룹핑 방법)
+
+문제)
+연도별로 입사 한 사원 조회
+
+select 
+	date_format(hiredate,'%y') ,
+	count(*)
+from emp 
+	group by date_format(HIREDATE,'%y') 
+
+-연도,월별 조회가 가능하다.
+------------------------------------------------------
+
+--AND,OR
+where 조건에 동시에 사용할때 가 있음.
+1. AND (먼저 실행)
+2. OR 
+
+3.부서가 10,30 에 속하는 사원 중
+급여가 1500을 넘는 사원의 이름 및 급여를 표시하라.
+(OR = 10 혹은 30)(db에서만 쓰이는 문법이 아니다.)
+select
+	ename,
+	sal
+from emp
+where
+(
+deptno = 10
+or 
+deptno = 30
+)
+and
+sal>1500
+
+
+
+
+쿼리 공부 )
+
+--------------------------
+--20번 부서 사람들을 추출
+
+select
+	deptno,
+	ename
+
+from emp 
+
+------------------------------
+커미션(commm)이 null('')인 사람을 추출
+
+select 
+	ename,
+	comm
+from emp 
+where COMM is null ;
+-------------
+입사일이 '1980-12-17 ~ 1982 -01-23
+
+select 
+	ename'이름' ,
+	HIREDATE'입사일'
+from emp 
+
+where hiredate >'1980-12-17'
+	and
+	hiredate <'1982-01-23'
+
+
+
+-----------------------------------------
+
+직업이 salesman이고 
+부서번호가 30인 
+사원 이름 조회
+select 
+	job'직업',
+	deptno'부서번호',
+	ename '이름'
+	
+	
+from emp
+
+
+where job = 'salesman'
+and deptno=30
+
+
+-------------------------------------------
+ 사원번호가 7782 인 사원이름을 
+brian 으로 수정하시오 .
+
+update emp where 
+set ename = 'brian'
+
+where empno = 7782;
+--------------------------------------------
+
+
+고급 쿼리 -----
+(join, subquery....)
+join 을 알기전에 알아야 하는 개념. foreign key
+join : 두 개 이상의 테이블을 조회할때 사용.
+단, 조회 하고자 하는 테이블 들이 관계가 있어야 함. 관계를 맺기 위해 fk 키가 필요 (emp, dept 관계형성 했다.fk 했다.-deptno 교집 합 )
+(교집합 을 찾는 걸 join 해서 select 한다.)
+propertice > DDL -create 문법 FOREIGN KEY( 관계 있다 알려주는것.)
+
+--조인 하는 방법 1.
+select 
+	ename	 
+	
+from emp e, dept d (테이블 이름 뒤 약어)
+
+where e.deptno = d.deptno      <-----약어 를 입력 해주면 입력해줄수 있다. 똑같은 컬럼 방지 
+
+where 절이 and 를 계속 써 길어져서 필터기능이 아닌데 추가되어 비추..(emp 에 있는 deptno 와 dept 에 있는 deptno 를 join할거야.)
+-----------------------------------------------------------------------------------------------
+--조인 하는 방법 2.★
+select 
+	ename	
+from emp as e
+join dept as d 
+on e.deptno = d.DEPTNO 
+where d.deptno = 20 (deptno 
+-----------------------------------------------------------------------------------------------default 값이 inner 설정 되있어서 안써도 된다.as,inner default 값
+
+join 은 교집 합 (emp , dept 의 교집합)
+
+철수가 오늘 입사
+사수 : 철수야 우리 테이블 관계도는 이렇다.
+10개 가 묶여져 있다
+FROM 절 이후에 10개 가 묶여 져 있다
+콤마 사용 할수 있다.
+
+
+join을 많이 쓰면 컴퓨터 가 부하 걸린다 . 데이터가 느려진다..
+
+dept 컬럼소개)
+dname , 부서이름
+loc , 근무지 
+
+
+------------------------\
+1 사원 명, 부서번호,부서이름,부서 근무지를 조회
+select 
+	empno,
+	ename,
+	loc,
+	dname
+	
+from emp as e
+join dept as d 
+
+on e.deptno
+where d.deptno 
+
+
+2. 부서별 급여합계와 부서이름을 조회
+
+select 
+	d.dname,
+	sum(sal)
+	
+	
+from emp as e
+join dept as d 
+
+on e.deptno
+
+where d.deptno 
+
+
+3. 부서 근무지가 NEWYORK 이고 직책이 MANAGER 인 사원의 이름과 급여를 조회하시오 
+
+elect 
+	loc,
+	job,
+	SAL 
+from emp as e
+	join dept as d
+	
+	
+where d.deptno
+	and job='manager'
+
+	
+
+
+
+
+4. 1983년 이후 입사한 사원의 보너스가 null 이면 100 주고, 사원의 이름과 
+부서이름 직업을 조회하시오. 
+select 
+	ename,
+	job,
+	dname,
+	ifnull(COMM,100 ) 
+from emp as e
+join dept as d 
+
+on e.deptno
+where d.deptno 
+group by date_format(HIREDATE,'%1983') 
+
+and comm is null
+
+
+
