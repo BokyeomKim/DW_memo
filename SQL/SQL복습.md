@@ -1,0 +1,29 @@
+****DML : 데이터 조작 언어 
+1.SELECT
+2.DELECT
+3.UPDATE
+4.INSERT
+
+
+
+SELECT 컬럼들,
+FROM 테이블 이름
+WHERE 필터링 조건(>,=,<,like, and, or  )
+GROUP BY 데이터를 그룹화 할 때
+HAVING 그룹된 데이터에서 집계함수(sum,avg,min,max) 사용할 때
+ORDER BY 정렬 ASC(오름차순 디폴트 값) , DESC (내림차순)
+LIMIT 데이터 row 강제로 자를때 
+
+***SQL 실행 순서 ***
+FROM -> WHERE ->GROUP BY -> HAVING 
+->SELECT -> ORDER BY
+
+테이블 : 실제 데이터를 저장하는 공간
+데이터 베이스 : 실제 테이블을 저장하는 공간
+데이터 베이스 -> 테이블 -> 데이터 
+
+집계함수 종류  
+최대값:MAX( ) 
+평균 : avg( )
+총합 : sum()
+최소값 : min()
