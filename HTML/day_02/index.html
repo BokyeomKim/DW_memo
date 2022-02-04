@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM 태그 공부</title>
+    <style>
+       table {
+        margin: auto;
+        box-shadow: 0 3px 7px rgb(80, 5, 5);
+        background-color: rgb(255, 195, 195);
+    }
+
+    table:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    tr {
+        border: 1px solid #444444;
+    }
+
+    tr:nth-child(even) {
+        background-color: #eaeaeb;
+    }
+
+    thead {
+        box-shadow: 0 1px 5px grey;
+    }
+
+    th {
+        padding: 1rem 2rem;
+        letter-spacing: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-align: center;
+    }
+
+    td {
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <!--form 태그 작성-->
+<form action="웹서버 주소">
+    아이디 : <input type="text"/>
+    비밀번호 : <input type="password"/>
+    회원 이메일 : <input type="email"/>
+    <input type="submit"/>
+</form>
+
+<h3>table 태그</h3>
+<!-- table 태그 작성 -->
+<table>
+    <thead>
+        <!-- tr : table row : 테이블 행 -->
+        <tr>
+            <!-- th : table head : 테이블의 제목(컬럼) -->
+            <th>출장비 내역</th>
+            <th>금액</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!-- table data : 열 데이터 (컬럼데이터) -->
+            <td>교통비</td>
+            <td>30,000</td>
+        </tr>
+        <tr>
+        <td>식비</td>
+        <td>100,000</td>
+        </tr>
+        <tr>
+        <td>숙박비</td>
+        <td>500,000</td>
+    </tr>
+    </tbody>
+    <!-- foot 도 있더라 ~ -->
+    <tfoot>
+        <tr>
+            <td>총합계</td>
+            <td>630,000</td>
+        </tr>
+    </tfoot>
+</table>
+
+<h3>table 시간표 만들기</h3>
+<table>
+    <thead>
+        <tr>
+            <th>월요일</th>
+            <th>화요일</th>
+            <th>수요일</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">필라테스</td>
+            <td>요가</td>
+        </tr>
+        <tr>
+            <td>복싱</td>
+            <td>레슬링</td>
+            <td rowspan="2">명상</td>
+        </tr>
+        <tr>
+            <td>웨이트 훈련</td>
+            <td>크로스핏</td>
+        </tr>
+    </tbody> 
+</table>
+
+
+
+</body>
+</html>
