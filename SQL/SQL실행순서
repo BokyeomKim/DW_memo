@@ -27,3 +27,5 @@ FROM -> WHERE ->GROUP BY -> HAVING
 평균 : avg( )
 총합 : sum()
 최소값 : min()
+
+
