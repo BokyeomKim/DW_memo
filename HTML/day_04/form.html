@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      .contact-form {
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+        margin: 50px auto;
+        width: 350px;
+        text-align: center;
+      }
+      .contact-form h2 {
+        background-color: #efefef;
+        margin-top: 0;
+        padding: 10px;
+      }
+      .contact-form input {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      .contact-form input[type='checkbox'] {
+        width: 10%;
+        margin: 10px auto;
+        padding: 10px;
+      }
+      .contact-form textarea {
+        width: 90%;
+        margin: 5px auto;
+        padding: 10px;
+        height: 80px;
+      }
+      .submit-btn {
+        cursor: pointer;
+        width: 150px;
+        margin-left: 18px;
+      }
+    </style>
+  </head>
+  <body>
+<!-- HTML(안드로이드) 하고 
+데이터베이스 연동 불가능. 그래서 웹서버에 전송을 
+해야함
+웹서버에 전송하는 방법이 2가지 
+1.get(public)
+  *http header 에 전송
+2.post(private) 
+  *http body 에 전송-->
+    <div class="contact-form">
+      <h2>카페 메뉴</h2>
+      <form action="서버 주소" method="post">
+      <select>
+        <form action="">
+          <option value="">--Please choose an menu--</option>
+          <!-- required : 무조건 입력해야함
+            disabled : 서버에 전송 안됨 -->
+          <input type="number" placeholder="수량" max =3 required/>
+          <input type="text" placeholder="회원이름 입력란"/>
+          <input type="password" placeholder="회원비밀번호 입력란.." required/>
+          <input type="checkbox"id = ad 광고수신여부 checked />
+          <label for="광고수신여부">"광고수신여부"
+          <input type="email" placeholder="이메일 입력란.." />
+        </form>
+      </select>
+        <textarea name="message" placeholder="주문시 메모 입력란..."></textarea>
+        <input class="submit-btn" type="submit" value="주문">
+        <!-- form 태그 안에 button을 만들면 서버에 전송 불가능. => submit 으로 ~-->
+      </form>
+    </div>
+  </body>
+</html>
