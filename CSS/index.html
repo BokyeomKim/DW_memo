@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .a {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+      }
+      .b {
+        position: relative;
+        top: 0px;
+        left: 100px;
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+      .c {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        background-color: yellow;
+        width: 100px;
+        height: 100px;
+      }
+      .d {
+        position: fixed;
+        width: 100px;
+        background-color: #0f70d5;
+        bottom: 100px;
+        right: 0px;
+      }
+      body {
+        height: 200vh;
+      }
+      .mom {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: #b36b00;
+      }
+      .son {
+        position: absolute;
+        top: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: #00ff80;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="a">A 구역</div>
+    <div class="b">B 구역</div>
+    <div class="c">C 구역</div>
+    <div class="d">D 구역</div>
+
+    <div class="mom">
+      부모
+      <div class="son">자식</div>
+    </div>
+  </body>
+</html>
