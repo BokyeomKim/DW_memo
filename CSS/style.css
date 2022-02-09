@@ -1,47 +1,57 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  height: 100vh;
-  background-image: linear-gradient(rgba(0, 250, 175, 0), rgb(214, 236, 161)),
-    url(pexels-anastasiia-goncharova-9592983.jpg);
-  background-position: center;
-  background-size: cover;
-}
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.book-form {
-  width: 500px;
-  height: auto;
-  border: 10px solid #312f31;
-  margin: 30% auto 0;
-  padding: 10px 10px;
-}
-.book-form input {
-  margin-bottom: 30px;
-  border-radius: 100px; /*둥글게*/
-  padding: 10px;
-  width: 100%;
-  height: auto;
-}
-.book-form .true {
-  cursor: pointer; /*버튼 확인(손 모양)*/
-  border-color: #312f31;
-  background-color: rgb(9, 172, 0);
-  color: rgb(252, 252, 252);
-  font-size: 20px;
-}
-.book-form .false {
-  border-color: #312f31;
-  cursor: pointer;
-  background-color: rgb(255, 0, 0);
-  color: white;
-  font-size: 20px;
-}
-.book-form {
-  border-color: #312f31;
-  cursor: pointer;
-  background-color: rgb(238, 245, 255);
-  opacity: 80%;
-}
+    body {
+      height: 100vh;
+      background-image: linear-gradient(
+          rgba(0, 250, 175, 0),
+          rgb(214, 236, 161)
+        ),
+        url(pexels-anastasiia-goncharova-9592983.jpg);
+      background-position: center;
+      background-size: cover;
+    }
+
+    .book-form {
+      width: 500px;
+      height: auto;
+      border: 10px solid #312f31;
+      margin: 30% auto 0;
+      padding: 10px 10px;
+    }
+    .book-form input {
+      margin-bottom: 30px;
+      border-radius: 100px; /*둥글게*/
+      padding: 10px;
+      width: 100%;
+      height: auto;
+    }
+    .book-form .true {
+      cursor: pointer; /*버튼 확인(손 모양)*/
+      border-color: #312f31;
+      background-color: rgb(9, 172, 0);
+      color: rgb(252, 252, 252);
+      font-size: 20px;
+    }
+    .book-form .false {
+      border-color: #312f31;
+      cursor: pointer;
+      background-color: rgb(255, 0, 0);
+      color: white;
+      font-size: 20px;
+    }
+    .book-form {
+      border-color: #312f31;
+      cursor: pointer;
+      background-color: rgb(238, 245, 255);
+      opacity: 80%;
+    }
+    select {
+      width: 200px;
+      padding: 10px;
+      margin-left: 30%;
+      height: auto;
+    }
