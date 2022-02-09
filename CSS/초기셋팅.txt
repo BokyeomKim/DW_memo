@@ -1,0 +1,22 @@
+작업 전 준비 셋팅
+
+
+   <title>Document</title>
+    <style>
+/*브라우저 마다 달라서 초기 셋팅
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+/* 사이트와 관련없는 사이트들을 container 밖에 작업 해준다.
+(관리가 편함. <ex div class = "pupup"></div>)
+    <div class="container"></div>
+
+/*div.container
+/*<form action = "></form>
+/*로그인 관련된것 
+  </body>
+</html>
