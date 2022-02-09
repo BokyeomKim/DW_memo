@@ -19,6 +19,12 @@ insert 할때 무조건 데이터를 넣어야 함.
 INSERT INTO emp
 VALUES('홍길동',3000,'manager',.....)
 
+ex.)
+insert into dept(deptno,dname,loc)
+values(50,'쏘리쏘리','대전')
+commit;
+
+
 
 
 -delete : 데이터 삭제
