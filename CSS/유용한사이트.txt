@@ -1,0 +1,8 @@
+-- css color
+https://htmlcolorcodes.com/
+
+-- 고화질 사진
+https://www.pexels.com/
+
+-- flex 사이트
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
