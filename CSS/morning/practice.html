@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .card-container{
+        display: flex;
+        flex-direction: row;
+        width: 900px;
+        height: 400px;
+        margin: 100px auto;
+    }
+    .item {
+            position: relative;
+            width: 100%;
+            padding: 25px;
+            /* item들이 동일한 크기를 갖게 된다. */
+            flex: 1;
+        }
+    .item:hover{
+        flex-grow:3;
+        transition: 0.5s;
+    }
+    .item:hover .caption{
+        display: block;
+    }
+    .item h2{
+        color: white;
+        font-size: 30px;
+        /* 글자 가운데 정렬 */
+        text-align: center;
+    }
+    .item p{
+        color:white;
+    }
+    .caption{
+        display: none;
+        margin: 30px;
+        max-width: 230px;
+    }
+    .caption button{
+        border: 1px double white;
+        border-radius: 5px;
+        background: none;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        width: 100px;
+        margin-top: 30px;
+    }
+    .item img{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 200px;
+    }
+    .item:nth-child(1){
+        background-color: rgb(182, 171, 15);
+    }
+    .item:nth-child(2){
+        background-color: rgb(0, 146, 61);
+    }
+    .item:nth-child(3){
+        background-color: rgb(87, 2, 99);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="card-container">
+            <div class="item">
+                <h2>DANCE</h2>
+                <div class="caption">
+                <p>우린 춤추고 노래해 동네서 가장 오래된</p>
+                    <button>예약</button>
+                </div>
+                    <img src="img1.png" alt="">
+            </div>
+            <div class="item">
+                <h2>WEIGHT</h2>
+                <div class="caption">
+                    <p>밤이되면 술고래가 돼 불타는 저녁 노을에</p>
+                    <button>예약</button>
+                </div>
+                <img src="img2.png" alt="">
+            </div>
+            <div class="item">
+                <h2>PRACTICE</h2>
+                <div class="caption">
+                    <p>Check this out 나는 정.상.수</p>
+                    <button>예약</button>
+                </div>
+                <img src="img3.png" alt="">
+            </div>
+        </div>
+        <div class="footer"></div>
+</div>
+</body>
+</html>
