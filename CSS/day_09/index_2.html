@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      header{
+          position: relative;
+        height: 500px;
+        width: 100%;
+        /* 먼저 background-color 를 이용해서 크기를 조절함.. */
+        /* 조절 후 background-color 는 주석처리 혹은 삭제 */
+       /* background-color: black; */
+        background-image: linear-gradient(rgba(20, 20, 53, 0.8),
+        rgba(30, 31, 32, 0.8)),url(blackheaven_first_1920_1200.jpg);
+        background-position: center;
+        background-size: cover;   
+     }
+        body{
+            background-color: wheat;
+        }
+
+     .nav{  
+         display: flex;
+         padding: 2% 6%;
+         justify-content: space-between;
+         align-items: center;
+
+     }
+     .nav .img{
+         width: 150px;
+         height: 110px;
+         background-color: rgb(255, 255, 255);
+         color: rgb(0, 0, 0);
+     }
+     .nav-links ul li{
+         list-style: none;
+         display: inline-block;
+         padding: 8px 12px;
+     }
+        .nav-links ul li a{ 
+            color: #fff;
+            text-decoration: none;
+            font-size: 25px;
+            font-weight: 800;
+        }
+ .nav-links ul li:hover{
+     transition: 700ms;
+     background-color: red;
+     border-radius: 5px;
+ }
+    .text-box{
+        position: absolute;
+        width: 90%;
+        top: 40%;
+        left: 5%;
+        text-align: center;
+        color: #fff;
+    }
+     .text-box h1{
+        font-size: 60px;
+    }
+     .text-box p{
+         margin-top: 10px;
+    font-size: 16px; 
+    margin-bottom: 40px;
+    }
+     .text-box a{
+         text-decoration: none;
+         color: #fff;
+         border: 1px solid #fff;
+         font-size: 20px;
+         font-weight: 700;
+         cursor: pointer;
+         padding: 12px 34px;
+     }
+     .text-box a:hover{
+         border: 1px solid red;
+         background: red;
+         transition: 1s;
+     }
+     /* header , table 여백을 주기 위해 margin top */
+     .section{
+        width: 80%;
+        margin-top: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        
+     }
+     /* 테이블 추가 */
+      #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        background-color: chocolate;
+        border: 2px solid #000000;
+   
+      }
+
+      #customers th {
+        border: 3px solid rgb(83, 78, 78);
+        padding: 8px;
+      }
+
+      #customers tr:nth-child(even) {
+          border: 1px solid #000000;
+        background-color: #f2f2f2;
+      }
+
+      #customers tr:hover {
+        background-color: rgb(59, 40, 40);
+      }
+
+      #customers th {
+
+        padding-top: 15px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #000000;
+        color: rgb(0, 0, 0);
+      }
+    
+      .card {
+        /* 카드 크기 가로 260 세로 400*/
+        border-radius: 8px;
+        /* dispaly : inline -block;(가로 배치) */
+        display: inline-block;
+        margin-left: 100px;
+        margin-bottom: 200px;
+        height: 400px;
+        width: 260px;
+        /* over flow 넘치다. */
+        overflow: hidden;
+        box-shadow: 0 20px 35px rgb(0, 0, 0);
+        padding: 5px;
+        /* 축소 확대. 이벤트 효과 */
+        transform: scale(1);
+        /* 속도 */
+        transition: 0.3s;
+        background-color: white;
+      }
+
+      .card:hover {
+        /* hover 마우스를 가져다 대면 포인트로 바뀌고 트랜스 폼으로 변형 , 스케일 : 확대 /축소  */
+        cursor: pointer;
+        transform: scale(1.2);
+        background-color: rgb(255, 17, 0);
+        /* 돌아오는 시간은 0.3 초 */
+      }
+      .card img {
+        /* 카드 크기와 맞춤 */
+        width: 260px;
+        height: 260px;
+      }
+      .text-wrap {
+        padding: 15px;
+        /*  제목 위치 */
+        text-align: left;
+      }
+      .text-wrap h1 {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .text-wrap p {
+        /* 글씨 간격 (가로)조절 */
+        line-height: 2;
+        font-size: 12px;
+      }
+
+      .logo{
+          cursor: pointer;
+      }
+      .card-container{
+          width: 1500px;
+          height: 500px;
+          background: #fff;
+          margin: 100px auto;
+          display: flex;
+      }
+      .col{
+          height : 100%;
+          flex: 1;
+          color: rgb(27, 27, 27);
+          padding: 25px;
+          position: relative;
+          transition: 0.6s;
+      }
+      .col:nth-child(1) {
+          background-image: url(i13996610007.jpg);
+          background-position: center;
+          background-size: cover;
+      }
+      .col:nth-child(2) {
+          background-image: url(maxresdefault.jpg);
+          background-position: center;
+          background-size: cover;
+      }
+      .col:nth-child(3){
+          background-image: url(maxresdefault\ \(1\).jpg);
+          background-position: center;
+          background-size: cover;
+      }
+      .col:nth-child(4) {
+          background-image: url(i14173668626.jpg);
+          background-position: center;
+          background-size: cover;
+      }
+      h2{
+          text-align: center;
+          font-size: 22px;
+          font-weight: 600;
+      }
+      .caption{
+          max-width: 230px;
+          font-size: 14px;
+          margin: 28px 0;
+      }
+      .caption button{
+         border: 1px solid #fff;
+        border-radius: 30px;
+        background: transparent;
+        outline: none;
+        padding: 8px 18px;
+        color: #fff;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+.col img {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+/* hover 이벤트 모음 */
+.col:hover {
+  flex-grow: 2.5;
+}
+.col:hover .caption {
+  display: block;
+}
+
+.col:hover h2 {
+  text-align: left;
+}
+.footer{
+    margin-top: 100px;
+    width: 1900px;
+    height: 100px;
+    background-color: black;
+}
+.footer p{
+    position: absolute;
+    color: white;
+   
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+          <!-- nav : logo,menu -->
+          <div class="nav">
+              <!-- <div class="image"> -->
+                  <!-- 이미지로고위치</div> -->
+                  <!-- logo image -->
+                  <div class="logo">
+                  <img src="logo.png" alt="">
+              </div>
+              <div class="nav-links">
+                 <!--ul>li*5  -->
+                 <!-- x버튼 태그 위치 -->
+                <ul>
+                     <li><a href="#">HOME</a></li>
+                     <li><a href="#">ABOUT</a></li>
+                     <li><a href="#">PROGRAMS</a></li>
+                     <li><a href="#">CONTACT</a></li>
+                 </ul>
+              </div>
+          </div>
+          <div class="text-box">
+              <h1>2월15일</h1>
+              <p>소개합니다.<br/>누구나 쉽게 배울 수 있습니다.
+              </p>
+              <!-- link tag 를 마치 버튼처럼 꾸밀 예정 -->
+              <!-- # : 이동할 사이트가 없다는걸 의미  -->
+              <a href="#">프로그램 소개</a>
+          </div>
+      </header>
+      <section class="table">
+
+      </section>
+      <div class="section">
+          <!-- 시간표 -->
+            <table id="customers">
+      <thead>
+        <tr>
+          <th>시간</th>
+          <th>월</th>
+          <th>화</th>
+          <th>수</th>
+          <th>목</th>
+          <th>금</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>09:00~09:50</td>
+        <td>국어</td>
+        <td>수학</td>
+        <td>영어</td>
+        <td>SQL</td>
+        <td>java</td>
+      </tr>
+      <tr>
+        <td>10:00~10:50</td>
+        <td>HTML&CSS</td>
+        <td>자습시간</td>
+        <td>자율학습</td>
+        <td>체육</td>
+      </tr>
+      <tr>
+        <td>11:00~11:50</td>
+        <td>SQL</td>
+        <td>JAVA</td>
+        <td>SQL</td>
+        <td>영어</td>
+      </tr>
+      <tr>
+        <td>12:00~12:50</td>
+        <td colspan="2">CSS</td>
+        <td>JAVA</td>
+        <td>CSS</td>
+        <td>사회</td>
+      </tr>
+      <tr>
+        <td>13:40~14:30</td>
+        <td colspan="2">SQL</td>
+        <td>JAVA</td>
+        <td>SQL</td>
+        <td>영어</td>
+      </tr>
+      <tr>
+        <td>14:40~15:30</td>
+        <td colspan="5">문제풀이시간</td>
+      </tr>
+      <tbody></tbody>
+    </table>
+      </div>
+      <div class="section">
+          <!-- 카드 레이아웃 -->
+       <div class="container">
+      <!-- div 카드 에 관련된 태그 만 온다. -->
+      <div class="card">
+        <img src="도적.png" alt="" />
+        <!-- text 관련된 태그만 온다. -->
+        <div class="text-wrap">
+          <h1>도적</h1>
+          <p>“상대를 기습하거나 몸을 숨기는 등의 특수한 기술을 사용하는 도적은 운과 민첩의 특색을 잘 간직하고 있는 직업입니다.”</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="모험가전사.png" alt="" />
+        <!-- text 관련된 태그만 온다. -->
+        <div class="text-wrap">
+          <h1>전사</h1>
+          <p>“전사는 강한 공격력과 체력을 지니고 있는 직업으로 전투 상황에서는 최전선에서 그 진가를 발휘하게 됩니다.”</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="궁수.png" alt="" />
+        <!-- text 관련된 태그만 온다. -->
+        <div class="text-wrap">
+          <h1>궁수</h1>
+          <p>“민첩성과 힘을 지닌 궁수는 적을 공격함에 있어 백발백중의 높은 명중률을 자랑하는 직업입니다.”</p>
+        </div>
+      </div>
+      <div class="card">
+          <img src="마법사.png" alt="">
+          <div class="text-wrap">
+              <h1>마법사</h1>
+              <p>“고대의 지식을 탐구하는 것을 일생일대의 과업으로 여기는 마법사는 높은 지능을 요구하는 직업입니다.”</p>
+          </div>
+      </div>
+    </div>
+        </div>
+      <div class="card-container">
+          <div class="col">
+              <h2></h2>
+              <div class="caption">
+                  <p>
+                       Strength does not come from the physical capacity. It comes from
+              an indomitable will.
+                  </p>
+                  <button type="button">Know More</button>
+              </div>
+              <img src="모험가전사.png" alt="">
+          </div>
+          <div class="col">
+              <h2></h2>
+              <div class="caption">
+                  <p> Strength does not come from the physical capacity. It comes from
+              an indomitable will.</p>
+              <button type="button">Know More</button>
+              </div>
+              <img src="마법사.png" alt="">
+          </div>
+          <div class="col">
+              <h2></h2>
+              <div class="caption">
+                  <p>Strength does not come from the physical capacity. It comes from
+              an indomitable will.</p>
+              <button type="button">Know More</button>
+              </div>
+              <img src="궁수.png" alt="">
+          </div>
+               <div class="col">
+              <h2></h2>
+              <div class="caption">
+                  <p>Strength does not come from the physical capacity. It comes from
+              an indomitable will.</p>
+              <button type="button">Know More</button>
+              </div>
+              <img src="도적.png" alt="">
+          </div>
+      </div>
+    </div>
+    </div>
+  </body>
+  <div class="footer">
+      <p>footer영역</p>
+      <h2>footer</h2>
+  </div>
+</html>
