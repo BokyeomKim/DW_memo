@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .side-nav {
+        /* position : fixed (세로 고정 되어있어야 해서) !!!! */
+        position: fixed;
+        width: 250px;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: #0d74f5;
+        padding: 20px 30px;
+      }
+      .nav-links {
+        list-style: none;
+      }
+      .nav-links li {
+        padding: 10px 10px;
+      }
+      .nav-links li:hover {
+        border-radius: 50px;
+        transition: 0.5s;
+        background-color: black;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 14px;
+      }
+      .nav-links li a i {
+        font-size: 22px;
+        margin-right: 20px;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/ec2e6610a2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="side-nav">
+          <!--  안에 로고와 같은 것들이 들어간다. -->
+          <div class="logo"></div>
+          <ul class="nav-links">
+            <!--(li>a)*3 -->
+            <li>
+              <a href="#"
+                ><i class="fa-regular fa-face-grin-tongue-squint"></i>HOME</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa-regular fa-face-surprise"></i>Message</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-regular fa-face-angry"></i>Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
