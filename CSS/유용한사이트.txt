@@ -9,3 +9,9 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 -- 파비콘 만들기 
 https://www.favicon-generator.org/
+
+-- 아이콘 찾기
+https://fontawesome.com/
+
+<script src="https://kit.fontawesome.com/ec2e6610a2.js"
+crossorigin="anonymous"></script>
