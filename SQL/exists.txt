@@ -1,0 +1,81 @@
+SQL 
+- EXISTS 
+
+SELECT 
+*
+FROM emp
+WHERE EXISTS (
+SELECT * FROM emp where
+job = 'manager'
+)
+-()서브쿼리에 데이터가 있으면 true, 없으면 false
+true 면 메인쿼리가 실행 된다.
+
+------------------------------------------------
+select 
+ename
+from emp 
+where exists
+-- 데이터가 있는지 없는지만 
+(select
+*
+from emp 
+where empno= 7876)
+------------------------------------------------
+
+
+
+NOT EXISTS
+데이터가 없어야 실행한다.
+-----------------------------------------------------------
+update emp 
+set sal =3000
+where exists 
+(
+	select * from emp where job = 'manager'
+)
+
+-- 서브쿼리에 데이터가 있으면 실행 
+
+-- 카카오 뱅크 
+-- 데이트가 있으면 업데이트를 실행하고 싶을때 =>
+update 백업 실행 코드 
+set 백업날짜 = '220222'
+where exists 
+(
+	select * from 입출금내역 
+)
+-----------------------------------------------------------
+
+exists , not exists
+=>서브쿼리 데이터 여부에 따라 실행 판단 
+
+
+모델링 
+=> (emp, dept)
+(부서 테이블이 없다고 가정)
+테이블 이름  : emp
+empno, ename, dname, loc
+------------------------------
+100, 홍길동, 개발팀, 대전
+
+(부서가 생길때 마다 사원정보에 계속 null 이 들어가야 한다.)
+null,null,기획팀, 대전
+null,nuill, 사업팀, 서울
+
+*테이블에 null 데이터가 많으면 정규화(모델링) 고려 대상
+*update => (delete -> insert )
+말이 update 지 ,delete 후 insert 
+
+
+
+
+
+
+
+
+
+
+
+
+	
