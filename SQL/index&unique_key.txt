@@ -1,0 +1,35 @@
+
+목차 : index 
+목차가 없으면 속도가 느리다 .
+
+PRIMARY KEY(PK):
+중복 허용 x
+:자동으로 인덱스가 붙음.
+
+FOREIGN KEY(FK):
+중복허용 o
+:인덱스 없음
+index 를 생성해야 함.
+Create INDEX<인덱스명>
+ON . <테이블 명>( 칼럼명1,칼럼명 2 …..)
+
+
+
+
+
+*UNIQUE KEY
+(FK 키가 PK 처럼 사용. 중복이 허용 안된다.
+index, UNIQUE KEY 넣어주면 PK 처럼 된다.)
+중복허용o -> 중복허용 x (unique key)
+문법) 
+
+<방법1>
+CREATE TABLE emp(
+deptno int,
+UNIQUE KEY emp (deptno)
+	테이블 이름 (컬럼 이름)
+)
+<방법2>
+CREATE TABLE emp(
+deptno int UNIQUE KEY
+)
