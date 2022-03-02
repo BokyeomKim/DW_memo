@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .section {
+        /* grid 2 차원 UI */
+        display: grid;
+        /* repeat() : grid 안에 있는 아이템을 모두 크기 조절 
+        repeat (x,y)
+        x : 반복횟수
+        y : 값(크기에 대한)
+        minmax() : 최소크기와 최대 크기 조절
+        1fr(fraction) : flex 1과 동일  
+        */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 50px;
+        width: 80%;
+        height: auto;
+        margin: 30px auto 0;
+        background-color: darkred;
+        padding: 10px;
+      }
+      .item {
+        width: 100%;
+        height: 350px;
+        background-color: blue;
+        border: 2px solid black;
+        border-radius: 10px;
+          box-shadow: 0 2rem 1rem rgb(0, 0, 0);
+          text-align: center;
+          padding: 10px;
+          cursor: pointer;
+      }
+      .item img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        object-fit: cover;
+      }
+      .item h1 {
+        text-align: center;
+        color: yellow;
+        margin: 10px;
+        font-weight: 900;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      .item p{
+        text-align: center;
+        color: yellow;
+        font-family: monospace;
+      }
+      .item:hover{
+          transform: rotateY(270deg);
+          transition: 0.3s;
+      }
+      .item a{
+          color: greenyellow;
+      }
+
+      
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section">
+        <div class="item">
+          <img src="꼬북이.jpg" alt="" />
+          <h1>꼬부기</h1>
+          <p>꼬마 거북이 포켓몬. 딱딱한 등껍질은 여러모로 쓸모가 많다.</p>
+        </div>
+        <div class="item">
+          <img src="이상해씨.jpg" alt="" />
+          <h1>이상해씨</h1>
+          <p>이상해씨는 포켓몬의 일종이다. 태어날 때부터 등에 있는 이상한 씨앗과 함께 성장하며 자란다.</p>
+        </div>
+        <div class="item">
+          <img src="파이리.gif" alt="" />
+          <h1>파이리</h1>
+          <p>꼬리의 불꽃은 파이리의 생명력의 상징이다. 건강할 때 왕성하게 불타오른다.</p>
+        </div>
+        <div class="item">
+          <img src="175.gif" alt="" />
+          <h1>토게피</h1>
+          <p>사람이나 포켓몬이 발산하는 상냥함이나 즐거운 마음을 에너지로 삼는다.</p>
+        </div>
+        <div class="item">
+          <img src="Pikachu.jpg" alt="" />
+          <h1>피카츄</h1>
+          <p>뺨의 양쪽에 작은 전기 주머니가 있다. 위기 상황일 때 방전한다.</p>
+        </div>
+             <div class="item">
+          <img src="메타몽.jpg" alt="" />
+          <h1>메타몽</h1>
+          <p>세포 조직을 일순간에 복사해서 상대와 똑같이 변신하는 능력이 있다.</p>
+        </div>
+        <div class="item">
+          <img src="망나뇽.jpg" alt="" />
+          <h1>망나뇽</h1>
+          <p>오랫동안 환상이라고 여겨졌지만 최근 낚시로 잡혀서 그 존재가 확인되었다.</p>
+        </div>
+              <div class="item">
+          <img src="뮤.png" alt="" />
+          <h1>뮤</h1>
+          <p>뮤는 1세대에서 최초로 등장한 환상의 포켓몬이다. 모든 환상의 포켓몬의 시초인 포켓몬이다</p>
+          <a href="grid2.html">클릭</a>
+          <!-- /서브페이지/index.html -->
+          <!-- ..(뒤로가기)
+          .(현재경로) 
+        A폴더/B폴더/index.html
+        A폴더/이미지폴더/증명사진.png
+        -->
+        </div>
+        <div class="item">
+          <img src="캡처.PNG" alt="" />
+          <h1>Git Hub 관리</h1>
+          <p>Git Hub 을 이용해서 프로젝트 관리를 했습니다.</p>
+          <a href="https://github.com/BokyeomKim">Read More</a>
+        </div>
+             <div class="item">
+          <img src="maxresdefault.jpg" alt="" />
+          <h1>???</h1>
+          <p>text</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
