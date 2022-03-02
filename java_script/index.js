@@ -3,6 +3,7 @@
 //자바스크립트 print
 //세미콜론이 없어도 실행이 된다. (권장사양)
 //java 와 같은 데이터 타입이 없다. 
+
 console.log('Hello World');
 var x = 10;
 var y = '안녕하세요';
