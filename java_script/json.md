@@ -16,7 +16,7 @@ Ruby,
 //Java 에서는 Json을 Map이라고 함.
 //JSON : 데이터 형식(단순히 데이터를 표시하는 방법)
 
-
+<code>
 var information = {
     "name": "kim bo kyeom",
     "age": 30,
