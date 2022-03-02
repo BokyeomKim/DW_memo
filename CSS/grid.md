@@ -20,10 +20,7 @@ Static IP : 고정아이피
 IP: 인터넷을 사용하기 위한 주소
 (ex.고속도로 통행권)
 
-
-
-
-/* grid 2 차원 UI */
+grid 2 차원 UI 
         display: grid;
         /* repeat() : grid 안에 있는 아이템을 모두 크기 조절 
         repeat (x,y)
