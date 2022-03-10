@@ -33,9 +33,12 @@ empno : 7369,
 ename : "SMITH"
 }
 ---
-:을 기준을 왼쪽을 key, 오른쪽 을 value 라고 칭함,
+
+
+## :을 기준을 왼쪽을 key, 오른쪽 을 value 라고 칭함,
 ename : "SMITH"
 ename : "BRYAN"
+</br>
 ▲동일한 key 로 불가.
 ---
 emp:
