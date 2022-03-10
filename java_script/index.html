@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .blue {
+        background-color: blue;
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+      }
+      .red {
+        background-color: red;
+        width: 150px;
+        height: 150px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- script 를 이용한 css 컨트롤  -->
+    <!-- onclick : 클릭시 함수 호출 -->
+    <div class="container">
+      <div id="blue" class="blue" onclick="changeColor()"></div>
+      <div id="red" class="red" onclick="hide()"></div>
+      <div class="clear">
+        <button onclick="setInitialization()">ALL CLEAR</button>
+      </div>
+      <div class="form">
+        <input id="userpassword" type="password" value="" />
+        <!-- userPassword2 -->
+        <input
+          id="userpassword2"
+          type="password"
+          value=""
+          onkeyup="checkUserId()"
+        />
+      </div>
+    </div>
+    <script>
+      function checkUserId() {
+        var password = document.getElementById('userpassword').value;
+        var password2 = document.getElementById('userpassword2').value;
+        if (password == password2) {
+          confirm('비밀번호가 일치합니다.');
+        }
+      }
+      //함수(메소드)
+      //javascript 함수는 리턴 타입이 없다.
+      function changeColor() {
+        //바닐라 스크립트 문법
+        var color = (document.getElementById('blue').style.background =
+          'black');
+        if (color == 'black') alert('이미 배경색은 검정색 입니다.');
+        return 0;
+        document.getElementById('blue').style.background = 'black';
+        console.log(color).style.background;
+      }
+      //함수이름은 동사 ! 명사사용 x
+      function hide() {
+        document.getElementById('blue').style.display = 'none';
+      }
+
+      function setInitialization() {
+        document.getElementById('blue').style.background = 'blue';
+        document.getElementById('blue').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
