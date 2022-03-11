@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .row{
+            width: 1200px;
+            height: 200px;
+            margin: 30px auto;
+            display: flex;
+            border: 2px solid black;
+        }
+        .item{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 30%;
+        }
+        .tab{
+            flex-basis: 33.3%;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .tab h2{
+            text-align: center;
+        }
+        .content{
+            flex-basis: 70%;
+            border: 2px solid red;
+            font-size: 42px;
+            text-align: center;
+        }
+        #b{
+            display: none;
+        }
+        #c{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="item">
+                <div class="tab" onclick="secTab1()">
+                    <h2>TAB1</h2>
+                </div>
+                <div class="tab"onclick="secTab2()">
+                    <h2>TAB2</h2>
+                </div>
+                <div class="tab"onclick="secTab3()">
+                    <h2>TAB3</h2>
+                </div>
+            </div>
+            <div id ="a" class="content"><p>내용 1</p></div>
+            <div id ="b" class="content"><p>내용 2</p></div>
+            <div id ="c" class="content"><p>내용 3</p></div>
+<!-- 클린코드 
+1. 함수는 한가지 기능만 잘하면 된다.
+2. 파라미터가 적으면 적을수록 좋은 함수다.
+3. 함수는 심플 해야한다.
+*****중요****
+(AWS Lambda) - 마이크로 아키텍쳐
+함수는 한 가지를 해야한다. 그 한 가지를 잘 해야한다. 
+그 한 가지 만을 해야한다.-->
+        </div>
+    </div>
+    <script>
+        function secTab1(){
+            document.getElementById("a").style.display = "block";
+                document.getElementById("b").style.display = "none";
+                document.getElementById("c").style.display = "none";
+        }
+        function secTab2(){
+            document.getElementById("a").style.display = "none";
+                document.getElementById("b").style.display = "block";
+                document.getElementById("c").style.display = "none";
+        }
+        function secTab3(){
+              document.getElementById("a").style.display = "none";
+                document.getElementById("b").style.display = "none";
+                document.getElementById("c").style.display = "block";
+            
+        }
+
+
+
+        //많이 사용하는 방법
+        function setMenu(value){
+            if(value == 'tab1'){
+                document.getElementById("a").style.display = "block";
+                document.getElementById("b").style.display = "none";
+                document.getElementById("c").style.display = "none";
+            } if(value == 'tab2'){
+                document.getElementById("a").style.display = "none";
+                document.getElementById("b").style.display = "block";
+                document.getElementById("c").style.display = "none";
+            } if(value == 'tab3'){
+               document.getElementById("a").style.display = "none";
+                document.getElementById("b").style.display = "none";
+                document.getElementById("c").style.display = "block";
+
+            }
+        }
+    </script>
+</body>
+</html>
