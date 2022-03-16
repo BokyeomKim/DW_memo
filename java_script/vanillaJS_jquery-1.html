@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .popup {
+        width: 1000px;
+        height: 300px;
+        background-color: #777;
+        margin: 100px auto;
+        position: relative;
+      }
+
+      .close {
+        cursor: pointer;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 50px;
+        height: 50px;
+        background-color: white;
+      }
+      .container {
+        width: 500px;
+        height: 200px;
+        /* border: 1px solid black; */
+        margin: 50px auto;
+      }
+      button {
+        padding: 3%;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="popup" class="popup">
+      <div class="close" onclick="closePopup()"></div>
+    </div>
+    <!-- 컨텐츠 외적인 부분은 컨테이너 밖에 -->
+    <div class="container">
+      <!-- 사이트 컨텐츠 -->
+      <button onclick="openPopup()">확인</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 제이쿼리 best 장점
+        1. 비동기 통신 지원  
+        2. 같은 동작을 짧은 코드로 구현
+        3. 구버전 브라우저 지원-->
+    <script>
+      // hide, append
+      function closePopup() {
+        //   바닐라 js 문법
+        // document.getElementById('popup').style.display = 'none';
+        $('#popup').hide();
+        // $('#popup').css('display', 'none');
+        $('.container').append('<button onclick="openPopup()">취소</button>');
+      }
+      function openPopup() {
+        // var style = document.getElementById('popup').style.display;
+        var style = $('#popup').css('display');
+        // console.log(style02);
+        if (style === 'none') {
+          //   document.getElementById('popup').style.display = 'block';
+          $('#popup').show();
+          $('#popup').css('display', 'block');
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
