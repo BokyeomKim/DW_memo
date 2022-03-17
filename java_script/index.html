@@ -31,8 +31,9 @@
   <body>
     <div class="container">
       <button onclick="createItem()">append</button>
+      <button id="children">children</button>
       <div class="row">
-        <div class="item"></div>
+        <div class="item">한가람식당</div>
       </div>
     </div>
     <!-- jquery cdn -->
@@ -42,10 +43,34 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      //on : 이벤트를 받을 준비 (바인딩)
+      //익명 함수
+      //매개변수 2개 갖고 있는것 . on 은 함수
+      //자바스크립트는 매개변수로 함수가 가능하다.
+      //자바스크립트는 return 에 함수를 구현할수 있다.(클로저)
+
+      //2가지 방법
+      // 1번째 방법
+      $('#children').on('click', function () {
+        var len = $('.row').children().length;
+        console.log(len);
+        // children(): 자식정보 호출
+        // json 을 모르면 이해가 힘들다.
+        console.log($('.row').children());
+        // console.log($('.row').children()[0].innerHTML);
+      });
+      // 2번째 방법
       function createItem() {
         //버튼을 1번 클릭하면 아이템이 5개가 한번에 만들어짐.(for 문)
-        for (var i = 0; i < 5; ++i) {
-          $('.row').append('<div class="item"></div>');
+        //아이템 이 6개 이상이면 append stop!
+
+        var len = $('.row').children().length;
+        if (len < 6) {
+          for (var i = 0; i < 5; ++i) {
+            $('.row').append('<div class="item"></div>');
+          }
+        } else {
+          alert('아이템 길이가 6을 넘었습니다.');
         }
       }
     </script>
