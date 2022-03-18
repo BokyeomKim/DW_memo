@@ -1,0 +1,39 @@
+메소드 체이닝
+var userId = $('#userId').val().trim();
+        //(val)리턴한 것을 (trim)공백을 제거 하겠다.
+        // userId.trim(); <--방법2
+        //trim 공백제거
+        //substring, trim , replace =  문자열 함수이고, 자바스크립트 내장 함수다.
+        //"라이츄".trim() ; 문자가 함수를 가지고 있다.
+        //val 리턴 된 문자를 trim 하겠다.리턴값이 있었기 때문에 가능하다.
+        //메소드 체이닝(리턴값이 있는 함수만 가능)
+
+
+○$(**)val( ).○ trim( )
+○여기까지 라이츄○
+자바스크립트 안에 trim 이라는 function 이 있다.
+(내장함수)
+
+
+제이쿼리  function val(){
+return 문자
+}
+
+
+★메소드 체이닝 !
+->
+String(n).split(' ').sort( ).reverse( ).join(' ');
+이런식으로 코딩한다. 리턴값이 있어서 가능하다.
+가독성이 좋다.
+
+
+
+
+
+
+
+정규표현식 (reguler Expression)
+: 문자열을 처리하는 방법
+
+
+
