@@ -1,0 +1,104 @@
+문제제출폴더 이름_step1.txt
+
+ex) 답안 작성 
+int x = 10;
+데이터 타입 : int
+변수 명 : x
+연산자 : = 
+데이터 : 10
+
+1)
+boolean isTrue = false;
+데이터 타입 : boolean 
+변수 명 : isTrue
+연산자 : = 
+데이터 : false
+
+*** new는 연산자가 아닙니다.
+2)
+Pizza p = new Pizza();
+데이터 타입 : Pizza
+변수 명 : p
+연산자 :=
+생성자 : Pizza();
+
+3) 
+Pizza p = new Pizza("치즈피자");
+데이터 타입 : Pizza
+변수 명 : p
+연산자 :=
+생성자 : Pizza("치즈피자");
+
+4) 
+Pizza p = null;
+데이터 타입 :Pizza 
+변수 명 : p
+연산자 :=
+데이터 :null
+생성자 :x
+
+5) 
+new Pizza();
+데이터 타입 : 없음
+변수 명 : 없음
+연산자 : 없음
+생성자 : Pizza()
+
+** 2개 작성 
+6) 
+Pizza p = new Pizza();
+Pizza p2 = new Pizza();
+데이터 타입 : ex) Pizza, Pizza
+변수 명 : p, p2
+연산자 : =,=
+생성자 : Pizza(),Pizza()
+
+7) 
+Pizza p = new Pizza();
+p.피자종류 = "치즈피자";
+Pizza p2 = new Pizza();
+p2.피자종류 = "불고기피자";
+
+p2.피자종류 값은? ( )
+b. 불고기피자
+
+8) 
+Pizza p = null;
+p.피자종류 = "치즈피자";
+p.피자종류 값은? 
+오류. 피자파일을 호출해야 피자파일 안에있는
+필드변수,메소드 사용가능.
+
+9)
+Pizza p = null;
+if(p == null){
+  p = new Pizza();
+  p.피자종류 = "불고기피자"
+}
+p.피자종류 값은?
+불고기피자
+10)
+Pizza p = new Pizza();
+  p.피자종류 = "치즈피자";
+if(p != null){ //if시작
+  p = new Pizza();
+  p.피자종류 = "불고기피자";
+}//if 끝
+p.피자종류 값은?
+불고기피자
+
+11) Pizza클래스 피자종류 필드변수는 String 타입이다.
+p.피자종류 = "콤보피자"
+데이터 타입 : String
+변수 명 : p.피자종류
+연산자 :  =
+데이터 : "콤보피자"
+
+12) 
+Pizza p = new Pizza();
+Pizza p2 = new Pizza();
+p2.피자종류 = "불고기피자";
+p.피자종류 = p2.피자종류;
+p.피자종류 값은?
+
+불고기피자
