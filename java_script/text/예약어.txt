@@ -1,0 +1,4 @@
+new, this, super, *
+*new, this ,super = 클래스.오브젝트
+
+데이터 타입.
