@@ -1,0 +1,26 @@
+<Jquery정리> 
+children(부모태그에서 자식정보를 알고싶을때)&find(부모기준에서 자식요소들을 알고 싶을떄)
+
+on  - click -binding   이벤트 종류 다양하다. search
+append(포스트잇 처럼 추가)
+show&hide (해당요소 보여주기 &숨기기)
+focus (초점을 맞춰준다.)
+val(input value 가져온다.)
+trim(공백 제거)
+method chaining (메소드 끼리 연결 . 조건 : 리턴이 있어야 가능.)
+예시.)
+$()val().trim() : 메소드에 value리턴값이 있어야 trim 으로 넘어간다
+
+정규 표현식
+제이쿼리 다운 - cdn
+--------------------------------------
+Jquery,JAVA 학습 이유
+HTML 과 DB 가 연결 이 안된다. 
+그래서 중계자 역할인  JAVA 를 배우는거다.
+
+HTML 에서 JAVA 로 가는 구간을 jquey 를 사용.
+jquery 를 사용하면 이런 구조를 쉽게 만들수 있다.
+
+단점 . 유지보수가 힘들어진다.
+
+jquery가 HTML 안에 append 로 추가시켜주는것.
