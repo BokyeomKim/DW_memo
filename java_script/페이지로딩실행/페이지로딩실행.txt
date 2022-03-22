@@ -1,0 +1,141 @@
+<script>
+        //  $(function(){}); 익명함수 
+          $(function(){
+              alert('홈페이지에 온걸 환영합니다~')
+          }); //페이지 로딩시 처음 실행 해주는 함수 . 
+      </script>
+
+
+2.
+
+<div id = red class="red"></div>
+레드에 id 부여 id 는 중복 불가능
+
+
+
+3.
+   $(function(){
+              alert('홈페이지에 온걸 환영합니다~')
+            var id =  $('.red').attr('id');
+            console.log(id);
+              
+아이디가 red 인 요소의 이름 을 가져와줘!
+(태그 아이디 이름 가져오기)
+attribute : 속성
+
+
+4.
+$('.red').attr('id','black'); // id를 red 에서 black 으로 수정
+            //attr 은 속성 이름을 호출할 수도 있고 속성 값을 수정할 수도 있다.
+            //attr(속성이름 , 값)
+        }); 
+
+
+5. 
+ $('.red').attr('style','background-color : red ') // 스타일 변경
+   .red{
+            width: 500px;
+            height: 200px;
+        }
+
+가로 값이 없으니 스타일 크기 지정
+
+6.
+
+
+   <div id = red class="red">
+        <input id = "order" type="text" value="아메리카노">
+        <select id = menu>
+            <option value="none" selected>--커피를 선택하시오--</option>
+            <option value="americano">아메리카노</option>
+            <option value="icetea">아이스티</option>
+            <option value="latte">카페라떼</option>
+        </select>
+    </div>
+
+red 안에 만들기 .
+
+7.
+
+     var ordermenu = $('#order').val();
+            if(ordermenu === '아메리카노'){
+                //option:eq(1) :option 1번째 (oprtion 은 0부터 시작)
+                $('#menu option :eq(1)').attr('selected','selected')
+            }
+
+
+8.
+     //attr('selected','selected') selected 속성에 selected 값 넣기
+ if(orderMenu ==='카페라떼'){
+                $('#menu option :eq(3)').attr('selected','selected');
+            }
+9.
+
+
+  //keyup : 키보드에서 손을뗐을때 실행.
+        //keydown : 키보드를 눌렀을때 실행.
+        $('#order').on('keyup')
+
+10. 뭔가를 실행해야 한다.
+      $('#order').on('keyup',function(key){  //key : 아무이름이나 써두 된다,  변수이름. 키보드 마다 숫자가 있다. 그 숫자가 key 자리로 넘어간다.
+            if(key.keyCode ==13){ //엔터는 13
+                alert("엔터를 눌렀어요~~")
+
+            }
+
+        })
+
+
+11. 
+
+     var orderMenu = $('#order').val();
+            if(orderMenu === '아메리카노'){
+                $('#menu option :eq(1)').attr('selected','selected');
+                $('#menu option :eq(2)').removeAttr('selected'); // 속성 지우기
+                $('#menu option :eq(3)').removeAttr('selected');
+               
+            }
+            if(orderMenu ==='아이스티'){
+                $('#menu option :eq(2)').attr('selected','selected');
+                $('#menu option :eq(1)').removeAttr('selected');
+                $('#menu option :eq(3)').removeAttr('selected');
+                 
+            }
+            if(orderMenu ==='카페라떼'){
+                $('#menu option:eq(3)').attr('selected','selected');
+                $('#menu option:eq(1)').removeAttr('selected');
+                $('#menu option:eq(2)').removeAttr('selected');
+                 
+            }
+
+
+12.
+
+   $('#order').on('keyup',function(e){  //key : 아무이름이나 써두 된다,  변수이름. 키보드 마다 숫자가 있다. 그 숫자가 key 자리로 넘어간다.
+            //key up  이벤트 발생 - > 익명함수 파라미터에 이벤트 json 넘겨준다.
+            console.log(e)
+            //e : event 줄임말.
+        
+            if(e.keyCode ==13){ //엔터는 13
+                //엔터를 눌렀을때 실행 코드
+            
+            var orderMenu = $('#order').val();
+            if(orderMenu === '아메리카노'){
+                $('#menu option:eq(1)').attr('selected','selected');
+                $('#menu option:eq(2)').removeAttr('selected'); // 속성 지우기
+                $('#menu option:eq(3)').removeAttr('selected');
+               
+            }
+            if(orderMenu ==='아이스티'){
+                $('#menu option:eq(2)').attr('selected','selected');
+                $('#menu option:eq(1)').removeAttr('selected');
+                $('#menu option:eq(3)').removeAttr('selected');
+                 
+            }
+            if(orderMenu ==='카페라떼'){
+                $('#menu option :eq(3)').attr('selected','selected');
+                $('#menu option :eq(1)').removeAttr('selected');
+                $('#menu option :eq(2)').removeAttr('selected');
+            }
+            }
+        })
