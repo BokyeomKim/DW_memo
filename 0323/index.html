@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li class = "boxing" id="boxing">복싱</li>
+            <li><p>수영</p></li>
+            <li>유도</li>
+            <li>헬스</li>
+            <li>레슬링</li>
+        </ul>
+        <ul></ul>
+            <div>사격</div>
+    </div>
+    <!-- for 문 이용해서 -input id 와 value console.log 프린트 -->
+        <div class="text-wrapper">
+            <input id="userName" type="text" value="박카스">
+            <input id="userEmail" type="text" value="박카스@gmail.com">            
+        </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+     var container = $('.container');
+       var containerChildren = $('.container').children();
+       //아래 세개는 동일함.
+           //    console.log(container.children())
+           //    console.log($('.container').children());
+           // console.log(containerChildren)
+       console.log(containerChildren[0].children[0].innerHTML)
+       console.log(containerChildren[0].children[1].innerHTML)
+       console.log(containerChildren[0].children[2].innerHTML)
+       console.log(containerChildren[0].children[3].innerHTML)
+       console.log(containerChildren[0].children[4].innerHTML)
+       console.log(containerChildren[2].innerHTML)
+       //복싱 id 찾기
+       console.log(containerChildren[0].children[0].id)
+
+        //li 태그 for 문 으로 찾기
+        // console.log(containerChildren[0].children.length) log 찍어서 찾아보기 
+        var len = containerChildren[0].children.length;
+        for(var i= 0; i<len; i++){
+            //innerHtml : html태그와 text 를 보여줌
+            //innerText : text 만 보여줌 
+            var innertext= containerChildren[0].children[i].innerHTML;
+            console.log(innertext)
+            
+        }
+            console.log('========================================================')
+            //1step
+            var textwrapper = $('.text-wrapper').children();
+            for (var i=0; i<textwrapper.length; i++){
+                console.log(textwrapper[i].id)
+            }
+                //1.value 찾기
+                console.log(textwrapper[i].value),
+                //2.value 찾기
+                console.log($('#'+ textwrapper[0].id).val())
+                console.log($('#userName').val())
+                var x = 'userName';
+                console.log($('#'+x).val());
+           
+            
+       
+    </script>
+</body>
+</html>
