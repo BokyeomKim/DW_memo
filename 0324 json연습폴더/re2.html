@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+    <div class="container">
+    </div>
+<body>
+<script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+<!-- 소스 구현 -->
+<script>
+    /* 
+    no : 데이터 고유 번호
+    driver : 운전자
+    car : 탑승 차량
+    mileage : 주행 거리
+    createAt : 운행시작 날짜
+    endAt : 운행종료 날짜
+    */
+    var carData = [
+        {
+            no : 1,
+            driver : '박재범',
+            car : 'K5',
+            mileage : '30',
+            createAt : '2022-03-24 09:30:21',
+            endAt : '2022-03-24 10:30:55'
+        },
+        {
+            no : 2,
+            driver : '김종국',
+            car : 'K5',
+            mileage : '10',
+            createAt : '2022-03-24 10:55:12',
+            endAt : '2022-03-24 11:10:12'
+        },
+        {
+            no : 3,
+            driver : '박재범',
+            car : 'K5',
+            mileage : '5',
+            createAt : '2022-03-24 11:20:00',
+            endAt : '2022-03-24 11:30:12'
+        },
+        {
+            no : 4,
+            driver : '김종국',
+            car : 'K5',
+            mileage : '17',
+            createAt : '2022-03-24 12:00:30',
+            endAt : '2022-03-24 12:50:00'
+        }
+    ];
+    var sum = 0;
+    var count = 0;
+    var totalSum = 0;
+    console.log(carData);
+    carData.forEach(function(element){
+        console.log(element);//element 배열 원소값이구나~
+        //문제 1. 운전자가 김종국인 차량 주행거리 총합을 구하시오.
+        //문제 4. 운전자가 김종국인 차량의 운행시작과 운행종료를 모두 출력하시오.
+        if(element.driver === '김종국'){
+            sum += Number(element.mileage);//문자에서 숫자로 변환!
+            console.log(element.createAt);
+            console.log(element.endAt);
+        }
+        //문제 2. 운전자가 박재범인 차량의 json데이터 수는?
+        if(element.driver === '박재범'){
+            ++count;
+        }
+        //문제 3. 자동차가 K5인 차량의 주행거리 총합을 구하시오.
+        if(element.car === 'K5'){
+            totalSum += Number(element.mileage);
+        }
+    });
+    console.log(sum);
+    console.log(count);
+    console.log(totalSum);
+    //json값을 html로 표현하는 방법
+    $('.container').append(carData[0].driver);
+
+    //날짜 계산
+    var start = carData[0].createAt;
+    var end = carData[0].endAt
+    // step1 문자를 날짜형식으로 변경 
+    start = new Date(start);
+    console.log(start);
+    end = new Date(end);
+    console.log(end);
+
+
+    //step 2 날짜를 초 단위로 변경
+    //1970 년 1월 1일 자정기준부터 Millisecond 시간!
+    // 1초  === 1000ms, 1분 ===60초 
+    console.log(start.getTime()); 
+    console.log(end.getTime());
+    //step 3 끝 시간 - 처음시간 
+    var diffSecond =(end.getTime()-start.getTime())/(1000)
+    console.log(diffSecond);
+    //초
+    var diffMinute =(end.getTime()-start.getTime())/(1000*60)
+    //1분 === 60 초 이기 때문에 60을 곱한것.
+    //분
+    console.log(diffMinute);
+    //문제 : 몇초, 시간
+    //시간
+    var diffHour = (end.getTime()-start.getTime())/(1000*60*60);
+    console.log(diffHour);
+    //일
+    var diffDay = (end.getTime()-start.getTime())/(1000*60*60*24);
+    console.log(diffDay);
+
+</script>
+</body>
+</html>
