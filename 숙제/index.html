@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+        $(function(){
+
+            // JSON
+            // 폭탄주이모 가족찾기
+            var jsonData = {name : '포항폭탄주이모',age:40,addr: '포항',family: {
+                dad : '신형만',mom : '봉미선' 
+            }}
+            // key : name, age, addr / value = 포항폭탄주, 40,포항
+            console.log(jsonData)
+            // 신형만씨 출력
+            console.log(jsonData.family.dad) // Json 안에 Json 데이터 접근
+
+
+
+
+            //배열 안에 있는 json
+            var jsonData2 = [{name :'짱구',family:{dad : '신형만',mom : '봉미선'}},{name:'유리'},{name:'맹구'}]
+            console.log(jsonData2);
+            
+
+            //총합 더하기
+            var jsonData3 =  [{sal: 3000},{sal:5000},
+            {sal: 4400}, {sal: 2300}]
+            var sum = 0;
+            console.log(jsonData3)  
+            for(var i =0; i<jsonData3.length; i++){
+                   sum += jsonData3[i].sal
+            }
+            console.log(sum)
+            //메소드 체이닝  for 문
+            var jsonData3 =  [{sal: 3000},{sal:5000},
+            {sal: 4400}, {sal: 2300}]
+            var sum = 0;
+            console.log(jsonData3)
+            //버전 5
+            jsonData3.forEach(function(element){
+                sum += element.sal;
+                console.log("총합은 : "+sum);
+            });
+            // 버전 6(arrow function)
+            // 차이점 let 도입: 변수 이름 중복 안됨,  
+            // 자바스크립트 가 자유 롭다보니,
+            // 같은 변수를 사용할수 있기때문에, let 을 사용한다. 
+            // let total = 0;
+            // jsonData3.forEach((element) =>{
+            //     total += element.sal;
+            // });
+            // console.log("총합은"=total);
+            
+            var jsonData4 = 
+                {
+                name : '보노보노',
+                addr : '보노보노숲',
+                friend : ['너부리','포로리','야옹이형'],
+                family : [{name:'보노보노아빠', age:30},{name:'보노보노엄마',age : 30}],
+                hobby: "낮잠"
+               
+            }
+            
+            var sum2 = 0;
+            jsonData4.family.forEach(function(element){
+            sum2 += element.age;
+        }
+            )
+        console.log(sum2)
+            // 문제 1. friend 길이를 구하시오,
+            console.log(jsonData4.friend.length)
+            // 문제 2. family 나이를 합산하시오.
+            // 문제 3. 보노보노의 취미를 낮잠에서 수영으로 변경하시오.
+            jsonData4.hobby = '수영';
+            // 문제 4. saying 이라는 key를 추가하고 value에
+            //'포로리야 놀자 '를 추가 하시오 .
+            jsonData4.saying = '포로리야 놀자'
+            console.log(jsonData4)
+        
+        });
+  </script>
+</body>
+</html>
