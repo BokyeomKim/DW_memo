@@ -1,0 +1,20 @@
+
+배열 의 합을 구하기.
+
+ var jsonData3 =  [{sal: 3000},{sal:5000},
+            {sal: 4400}, {sal: 2300}]
+            var sum = 0;
+            console.log(jsonData3)
+
+
+->
+console.log(jsondata3)
+//콘솔찍고 배열 나옴:[0],[1],[2],[3] 
+
+//for 문 이 돌아가기 시작함.
+//sum 에 jsonData3[i] . sal 값을 더한다. 
+
+for(var i =0; i<jsonData3.length; i++){
+                   sum += jsonData3[i].sal
+            }
+            console.log(sum)
