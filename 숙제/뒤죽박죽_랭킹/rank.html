@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <div class="section-input">
+            <div class="card-header">
+                <h6>우수사원 등록</h6>
+            </div>
+            <div class="input-wrapper">
+                <input id="rank" type="number" placeholder="랭킹을 입력하세요">
+                <input id="name" type="text" maxlength="15" placeholder="이름을 입력하세요">
+                <input id="job" type="text" placeholder="직업을 입력하세요">
+                <input id="loc" type="text" placeholder="부서위치를 입력하세요">
+                <input id="hiredate" type="text" placeholder="입사날짜를 입력하세요">
+            </div>
+            <div class="btn-wrapper">
+                <button id="signUp" type="button">사원등록</button>
+            </div>
+        </div>
+        <div class="section-table">
+            <div class="card-header">
+                <h6>우수사원 목록</h6>
+            </div>
+        <div class="card-body">
+            <div class="table-wrapper">
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col">
+                        <table>
+                            <thead>
+                                <tr role="row">
+                                    <th>No<i id="asc" class='bx bx-up-arrow-alt'>
+                                    </i><i id="desc" class='bx bx-down-arrow-alt' ></i></th>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Start date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>홍길동</td>
+                                    <td>Senior Javascript Developer</td>
+                                    <td>New york</td>
+                                    <td>2015/11/28</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>이지은</td>
+                                    <td>Software Engineer</td>
+                                    <td>San Francisco</td>
+                                    <td>2020/06/15</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>김준수</td>
+                                    <td>Chief Executive Officer (CEO)</td>
+                                    <td>San Francisco</td>
+                                    <td>2022/01/01</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>손흥민</td>
+                                    <td>Junior Javascript Developer</td>
+                                    <td>London</td>
+                                    <td>2021/10/13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+      $('#signUp').on('click',function(){
+          var forms = $('.input-wrapper').children();
+           //1번 문제: 사원등록 버튼을 클릭 했을 때 랭킹 부터 입사날짜까지 빈공간이 있으면
+          //'데이터를 입력해주세요!' alret 띄우고, 빈공간을 입력한 input에 focus를 하시오.
+          for(var i=0; i<forms.length; i++){
+              var elementId = forms[i].id;
+              var elementValue = forms[i].value.trim();
+              if(elementValue ===''){
+                  alert('데이터를 입력해주세요')
+              $('#'+elementId).focus();
+              return false ;  
+          }
+            //2번 문제: Office는 	New York, San Francisco, London 중 한 곳입니다.
+          if (elementId === 'loc' && !isDeptName(elementValue)){
+              alert('Office 는 New York, San Francisco, London 중 한 곳입니다.');
+              return false;  
+          }
+              //3번 문제: 이미 등록된 랭킹은 중복될 수 없습니다.
+          if(elementId === 'rank' && !isRanker(elementValue)){
+              alert('이미 등록된 랭킹은 중복될 수 없습니다.');
+              $('#'+elementId).focus();
+              return false;
+          }
+      }
+       //4번 문제: 1~3번 문제이어서 해당 데이터를 tbody안에 추가 하시오.
+          //단, 마지막 행에 추가 하시오.
+      setTableBody();
+    })
+     //부서 확인
+        function isDeptName(dname){
+            const DEPT_NAME = ['New York','San Francisco', 'London'];
+            var isCheck = false;
+            DEPT_NAME.forEach(function(element){
+                if(element === dname) isCheck = true;
+            });
+            return isCheck;
+        }
+
+        function isRanker(rank){
+            var isRanker = true;
+            var tbodyChildren = $('tbody').children();
+            for(var i = 0; i<tbodyChildren.length; i++){
+                var firstTdElement = tbodyChildren[i].children[0];
+                var registeredRank = firstTdElement.innerText;
+                if (registeredRank === rank){
+                    isRanker = false;
+                }
+            }
+            return isRanker;
+        }
+            //tbody태그안에 데이터 넣기
+        function setTableBody(){
+            var rank =$('#rank').val().trim();
+            var name =$('#name').val().trim();
+            var job =$('#job').val().trim();
+            var loc =$('#loc').val().trim();
+            var hiredate = $('#hiredate').val().trim();
+            var innerHtml = '<tr><td>'+rank+'<tr><td>'+name+'<tr><td>'+job+'<tr><td>'
+                +loc+'<tr><td>'+hiredate+'<tr><td>';
+                    $('tbody').append(innerHtml);
+      }
+  </script>
+</body>
+</html>
