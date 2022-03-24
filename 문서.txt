@@ -18,3 +18,16 @@ for(var i =0; i<jsonData3.length; i++){
                    sum += jsonData3[i].sal
             }
             console.log(sum)
+            
+            ----------------------------------------------
+            
+             //총합 더하기
+            var jsonData3 =  [{sal: 3000},{sal:5000},
+            {sal: 4400}, {sal: 2300}]
+            var sum = 0;
+            console.log(jsonData3)
+            for(var i =0; i<jsonData3.length; i++){
+                   sum += jsonData3[i].sal
+            }
+            console.log(sum)
+        });
