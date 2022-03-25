@@ -5,73 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      .blue {
-        background-color: blue;
-        width: 150px;
-        height: 150px;
-        cursor: pointer;
-      }
-      .red {
-        background-color: red;
-        width: 150px;
-        height: 150px;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
-    <!-- script 를 이용한 css 컨트롤  -->
-    <!-- onclick : 클릭시 함수 호출 -->
-    <div class="container">
-      <div id="blue" class="blue" onclick="changeColor()"></div>
-      <div id="red" class="red" onclick="hide()"></div>
-      <div class="clear">
-        <button onclick="setInitialization()">ALL CLEAR</button>
-      </div>
-      <div class="form">
-        <input id="userpassword" type="password" value="" />
-        <!-- userPassword2 -->
-        <input
-          id="userpassword2"
-          type="password"
-          value=""
-          onkeyup="checkUserId()"
-        />
-      </div>
+    <div class="text-wrapper">
+      <input id="참이슬" type="text" value="참이슬  " />
+      <input id="대선" type="text" value="대선" />
+      <input id="여수밤바다" type="text" value=" " />
+      <input id="한라산" type="text" value="한라산" />
+      <input id="린" type="text" value="린" />
     </div>
+    <button>클릭</button>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script>
-      function checkUserId() {
-        var password = document.getElementById('userpassword').value;
-        var password2 = document.getElementById('userpassword2').value;
-        if (password == password2) {
-          confirm('비밀번호가 일치합니다.');
-        }
-      }
-      //함수(메소드)
-      //javascript 함수는 리턴 타입이 없다.
-      function changeColor() {
-        //바닐라 스크립트 문법
-        var color = (document.getElementById('blue').style.background =
-          'black');
-        if (color == 'black') alert('이미 배경색은 검정색 입니다.');
-        return 0;
-        document.getElementById('blue').style.background = 'black';
-        console.log(color).style.background;
-      }
-      //함수이름은 동사 ! 명사사용 x
-      function hide() {
-        document.getElementById('blue').style.display = 'none';
-      }
+      //클릭을 했을 때 input value 가져옴.(조건,공백제거)
+      //1. 요소(HTML 태그)에 id 지정.
+      //id 접근 #
+      var name = '참이슬';
+      //   $('#참이슬');
+      // 제이쿼리에 모든 함수는 return 값이 존재
+      var result = $('#' + name)
+        .val()
+        //1. trim 으로 return
+        //2. 이후 result로
+        .trim(); // 메소드 체이닝
+      console.log(result);
+      //▲ 단점 . input 이 많아지면 코드도 길어진다...
 
-      function setInitialization() {
-        document.getElementById('blue').style.background = 'blue';
-        document.getElementById('blue').style.display = 'block';
+      //2.다른 방법 : 부모와 자식을 이용한다.
+      //text-wrapper 에 자식정보를 변수에 대입
+      var textWrapperChildren = $('.text-wrapper').children(); //return 값이 배열
+      console.log(textWrapperChildren); // children 을 이용해서 자식정보를 상세하게 알수 있음. (id , value 등등..)
+      // 배열===반복문(while,each,for...)
+
+      for (var i = 0; i < textWrapperChildren.length; i++) {
+        //value 를 가져옴.
+
+        //▼ 코드가 길어지기 때문에 활용을 잘 해야 한다.
+        var id = textWrapperChildren[i].id;
+        // console.log(id);
+        var value = $('#' + id)
+          .val()
+          .trim();
+        //   .replace(/ /g, ''); // 모든 공백 제거
+
+        if (value == '') {
+          console.log('필수 입력란을 작성해주세요');
+          $('#' + id).focus;
+        }
+
+        // console.log(value);
       }
     </script>
   </body>
