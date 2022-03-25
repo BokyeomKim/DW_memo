@@ -1,0 +1,9 @@
+내장 문자열 함수
+(예시: 공백제거)
+1.  trim
+2. replace
+
+how?
+2. text-wrapper 이용(with for 문 사용)
+3. id (input) why? 중복x
+
