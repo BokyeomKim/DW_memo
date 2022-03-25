@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <div class="container"></div>
+<body>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+<!-- no : 데이터 고유 번호
+driver : 운전자
+car : 탑승 차량
+mileage : 주행 거리
+createAt : 운행시작 날짜
+endAt : 운행종료 날짜 -->
+
+<script>
+    // <!-- 소스 구현 -->
+    var carData = [
+        {
+            no : 1,
+            driver : '박재범',
+            car : 'K5',
+            mileage : '30',
+            createAt : '2022-03-24 09:30:21',
+            endAt : '2022-03-24 10:30:55'
+        },
+        {
+            no : 2,
+            driver : '김종국',
+            car : 'K5',
+            mileage : '10',
+            createAt : '2022-03-24 10:55:12',
+            endAt : '2022-03-24 11:10:12'
+        },
+        {
+            no : 3,
+            driver : '박재범',
+            car : 'K5',
+            mileage : '5',
+            createAt : '2022-03-24 11:20:00',
+            endAt : '2022-03-24 11:30:12'
+        },
+        {
+            no : 4,
+            driver : '김종국',
+            car : 'K5',
+            mileage : '17',
+            createAt : '2022-03-24 12:00:30',
+            endAt : '2022-03-24 12:50:00'
+        }
+    ];
+     //문제 1. 운전자가 김종국인 차량 주행거리 총합을 구하시오.
+     //문제 2. 운전자가 박재범인 차량의 json데이터 수는?
+     //문제 3. 자동차가 K5인 차량의 주행거리 총합을 구하시오.
+     //문제 4. 운전자가 김종국인 차량의 운행시작과 운행종료를 모두 출력하시오.
+    
+        var sum = 0;
+        var count =0;
+        var totalSum = 0;
+        console.log(carData);
+        carData.forEach(function(element){
+            console.log(element)
+        });
+
+        
+
+    
+
+</script>
+</body>
+</html>

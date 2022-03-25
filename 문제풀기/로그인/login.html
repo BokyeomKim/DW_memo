@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>상원컴퍼니 : 로그인</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>로그인</h1>
+      <div class="login-form">
+        <div class="txt-field">
+          <input id="userId" type="text" required />
+          <label for="userId">아이디</label>
+        </div>
+        <div class="txt-field">
+          <input id="password" type="password" required />
+          <label for="password">비밀번호</label>
+        </div>
+        <div class="pass">
+          <label for="login-status">로그인 상태 유지</label>
+          <input type="checkbox" id="login-status" value="stay" />
+        </div>
+        <input
+          class="login-btn"
+          type="button"
+          value="로그인"
+          onclick="join()"
+        />
+
+        <div class="signup-link">회원이 아닌가요? <a href="#">회원가입</a></div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function join() {
+        $("#login-status").on("click", function () {
+          alert("해당 브라우저에 로그인 정보를 저장하시겠습니까?");
+        });
+        var userId = $("#userId").val().trim();
+        $("#userId");
+        if (userId == "") {
+          alert("아이디를 입력해주세요!");
+
+          $("#userId").focus();
+          return false;
+        }
+        if (userId.length >= 30) {
+          alert("아이디는 30글자 이하로 작성해주세요.");
+          $("#userId").focus();
+          $("#userId").val("");
+
+          return false;
+        }
+        var password = $("#password").val().trim().toLowerCase();
+        if (password == "") {
+          alert("패스워드를 입력하세요.");
+          $("#password").focus();
+          return false;
+        }
+
+        if (password.length >= 30) {
+          alert("패스워드는 30 글자 이하로 작성해주세요");
+          $("#password").focus();
+          $("#password").val("");
+          return false;
+        }
+
+        var isResult = confirm("로그인 하시겠습니까?");
+
+        if (isResult) {
+          alert("로그인 성공!");
+        }
+      }
+      $("input[type=text]")
+        .filter("#userId")
+        .on("keyup", function () {
+          $(this).val($(this).val().toLowerCase());
+        });
+      $("input[type=text]")
+        .filter("#userId")
+        .on("keyup", function () {
+          $(this).val($(this).val().toLowerCase());
+        });
+      //로직 구현
+      /* 
+        1번 문제: 아이디와 비밀번호를 입력해야 로그인버튼을 눌렀을 때 
+         '로그인 완료'라는 alert창 띄우기
+        
+        2번 문제: 아이디와 비밀번호에 공백을 제거 해야한다.
+        3번 문제: 아이디와 비밀번호는 30글자로 제한한다.
+        4번 문제: 아이디에 대문자를 입력하면 소문자로 변환해야 한다.
+        5번 문제: 로그인 상태 유지를 누르면 
+        '해당 브라우저에 로그인 정보를 저장하시겠습니까?' 라는 confirm창 띄우기
+        */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+
+아키텍쳐
+HTML(client) -> JAVA(server)->DB(MySQL)
+로 JSON(소포)를 보내는데 
+배송기사는 jquery
+백엔드(Java)에서 DB로 JSON 을 보내는데
+기사는 Mybatis
+
+백엔드에서 JSON{중괄호를 줄때} HTML 줄때 append 이용
