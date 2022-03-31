@@ -1,0 +1,78 @@
+*HTTP (Hyper Text Transfer Protocol)
+:하이퍼 텍스트를 전송해주는 약속.
+*Hyper(초월,뛰어넘는!)
+
+HTTP 의 기능(method or function)
+
+HTTP 의 메소드 (..더 있지만 자주쓰이는 것은)
+
+	GET : select : 데이터 조회
+	POST : insert : 데이터 생성
+	DELECT : 데이터 삭제
+	PATCH : 데이터 일부분 수정
+
+이 메소드를 지휘자 역할은 Jquery !
+Jquery 가 없으면 Server 로 못 보냄
+
+https :
+s는 보안 Sequrity 의 약자.
+보안에 취약하기 때문에.
+(삥뜯기는 애=멍청한 프로토콜)
+
+일반인 曰)서버의 주소 목적지는 URL 주소
+개발자 曰)서버의 주소 목적지는 API 주소
+*API (Application Programming Interface)(json을 받을 목적지)
+*Application : 프로그램(소프트웨어)
+*Interface: 상호작용이 일어나다 . 응답이 오면 응답을 해줄게!
+
+--문법
+$.ajax(
+{ //json으로 정의 함.
+  url : API 주소 // 목적지
+  type : HTTP Method( )
+  dataType : json, text //서버응답 데이터
+  success : function(response){
+	//HTML 에서 요청 성공하면 
+	익명함수 파라미터에 값을 대입 해줄께!
+  } , // 실행못하면 error 실행
+error : function(request, status, error){
+	//인자값이 3개
+}
+)
+
+
+HTTP ERROR CODE :
+ 404 :없는 주소
+ 500 : 서버 내부 결함(에러)
+ 403 : 권한	
+ex. ) 에러 알림창 띄우기 
+if(request.status == 404){
+                alert('없는 주소입니다.')
+            }
+
+
+
+1. 배열 json 처리하는 방법 공부
+var arr = [{key : 1}, {key : 2}]
+2. for 문 돌려서 출력
+
+
+
+
+
+
+function getSum(x,y){
+    if(x >= 10){
+        x*2;
+    }
+    return y;
+}
+var result = getSum(5,10);
+
+x= 5 y = 10
+//x값 만 넣으면 y는 값이 안나온다. 자바스크립트에서는 오류가 안난다.
+return 에 함수도 올수 있다.
+
+
+
+
