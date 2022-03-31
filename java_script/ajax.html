@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="my-github">
+    <h3 class="name"></h3>
+    <p class="followes"></p>
+    <p class="following"></p>
+    <!-- <p class="repos"></p> -->
+</div>
+    <!-- <table>
+        <thead>
+            <!-- <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>visiblity</th>
+                <th>created_at</th>
+            </tr> -->
+        </thead>
+        <tbody id="list">
+            <!-- <tr>
+                <td>561651511</td>
+                <td>33-js-concepts</td>
+                <td>public</td>
+                <td>2020-06-</td>
+            </tr> -->
+
+
+        </tbody>
+    </table>
+     -->
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+      //전송 ! ~ (동기전송, 비동기전송)
+      //ajax default value : 비동기 전송
+    //   $.ajax({
+    //     url : "https://api.github.com/users/junsu22",
+    //     type : 'GET', // 데이터조회(select) 
+    //     dataType : 'json', // API서버에서 오는 데이터 타입정의
+    //     headers: {Authorization:'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'},
+    //     // 깃허브 업로드시 지우고 업로드
+    //     success : function(data){
+    //         //서버요청에 성공하면
+    //         // console.log(data)
+    //         // 팔로워 , 팔로잉만 출력!
+    //         console.log('fallowers =>'+data.followers)
+    //         console.log('following =>'+data.following)
+
+    //         $('.followes').append(data.followers);
+    //         $('.following').append(data.following);
+    //         $('.name').append(data.name)
+
+    //     },
+    //     error : function (request,status,error){
+    //         // 요청을 자주 하면 error :403 권한 없음. 
+    //         // token 부여받아서 풀어줘야 한다.
+    //         // 서버부하를 막기위한 token
+    //         console.log(error)
+    //         if(request.status == 404){
+    //             alert('없는 주소입니다.')
+    //         }
+    //     }
+    
+    // })//ajax 선언
+
+    $.ajax({
+        url:'https://api.github.com/users/junsu22/repos', //목적지 주소
+        type : 'GET', // 데이터조회(select) 
+        dataType : 'json', 
+        success : (data)=>{
+            //서버요청에 성공하면
+            console.log(data);
+            for (var i = 0; i<data.length; i++){
+         var html = 
+         '<tr><td>'+data[i].id+
+        '</td><td>'+data[i].name+
+        '</td><td>'+data[i].visillty+
+        '</td><td>'+data[i].createAt+
+         '</td></tr>'    
+        $('#list').append(html)
+        }
+        }
+        })
+    
+  </script>
+</body>
+</html>
