@@ -1,10 +1,10 @@
-package ���;
+package 상속;
 
-public class �ؾ {
+public class 붕어빵 {
 	String type;
 	int count;
 
-	public �ؾ(String type, int count) {
+	public 붕어빵(String type, int count) {
 
 		this.type = type;
 		this.count = count;
