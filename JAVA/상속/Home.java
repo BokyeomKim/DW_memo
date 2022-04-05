@@ -7,13 +7,13 @@ public class Home {
 
 		Dw dw  = new Dw(); 
 		dw.setName("김준수");
-		dw.setClassName("반응형");
+		dw.setClassName("웹&앱 반응형");
 		dw.setStudentCount(13);
 		
 		String name = dw.getName();
-		System.out.println("학생 이름은 :" +name);
+		System.out.println("학생 이름은 : " +name);
 		String className = dw.getClassName();
-		System.out.println("과정 이름은 :"+className);
+		System.out.println("과정 이름은 : "+className);
 		int studentCount = dw.getStudentCount();
 		System.out.println("학생수 : "+studentCount +"명");
 	

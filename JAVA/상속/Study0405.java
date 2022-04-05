@@ -31,9 +31,9 @@ public class Study0405 {
 		p = new Pizza(30); //30 이되어서 10이 없어지고 30이 된다.
 		System.out.println(p.money);
 		// 동일한 메커니즘
-		int x = 10;
-		x=30;
-		
+//		int x = 10;
+//		x=30;
+//		
 
 		// 생성자 (메소드) 호출
 		//1. 클래스도 데이터 타입.
