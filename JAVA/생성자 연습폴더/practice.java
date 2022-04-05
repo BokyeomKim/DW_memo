@@ -1,5 +1,11 @@
 package 상속;
 
+class Start {
+	public void 시작하다() {
+		System.out.println("연습을 시작합니다!");
+	}
+}
+
 class Ga {
 	public void 연습하다() {
 		System.out.println("가.연습하는중(1)");
@@ -43,7 +49,7 @@ class Sa {
 	}
 }
 
-class Exit{
+class Exit {
 	public void 종료하다() {
 		System.out.println("연습을 종료 합니다!");
 	}
@@ -52,6 +58,10 @@ class Exit{
 public class practice {
 
 	public static void main(String[] args) {
+
+		Start start = new Start();
+		start.시작하다();
+
 		Ga a = new Ga();
 		a.연습하다();
 
@@ -73,7 +83,7 @@ public class practice {
 		g.연습하다();
 		Exit exit = new Exit();
 		exit.종료하다();
-	
+
 	}
 
 }
