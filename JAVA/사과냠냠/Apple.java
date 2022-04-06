@@ -1,3 +1,4 @@
+package 상속;
 public class Apple {
     
 	int count;//사과 수량
