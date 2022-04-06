@@ -1,4 +1,6 @@
-public class Person {
+package 상속;
+
+public class person {
 
 	public static void main(String[] args) {	
         
@@ -15,6 +17,6 @@ public class Person {
 			apple.eatApple(30);
 			System.out.println("현재 사과는 : "+apple.getAppleCount()+"개 있습니다.");
 		}
-		
 	}
 }
+	
