@@ -1,9 +1,10 @@
-package ÄÃ·º¼ÇÁî;
+package ì»¬ë ‰ì…˜ì¦ˆ;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 class OneSoju{
 	
@@ -15,7 +16,7 @@ public class Hash_Study {
 
 		ArrayList<String>list = new ArrayList<String>();
 		List<String> list2 = new ArrayList<String>();
-		List2 = new LinkedList<String>();
+		list2 = new LinkedList<String>();
 		
 		OneSoju onesoju= new OneSoju();
 			
@@ -24,12 +25,12 @@ public class Hash_Study {
 		HashMap<String,Object> map2 = new HashMap<String,Object>();
 		
 		
-		map.put("1", "ÂüÀÌ½½"); // Hashmap ¿¡ µ¥ÀÌÅÍ ³Ö±â !
-		map.put("2", "Ã³À½Ã³·³");
-		map.put("a", "ÇÑ¶ó»ê");
+		map.put("1", "ì°¸ì´ìŠ¬"); // Hashmap ì— ë°ì´í„° ë„£ê¸° !
+		map.put("2", "ì²˜ìŒì²˜ëŸ¼");
+		map.put("a", "í•œë¼ì‚°");
 		map.put("b", 13);  
-		System.out.println(map.get("1"));// keyÀÌ¸§À¸·Î value Á¢±Ù 
-		//¹®Á¦1 . ÇÑ¶ó»ê Ãâ·ÂÇÏ±â 
+		System.out.println(map.get("1"));// keyì´ë¦„ìœ¼ë¡œ value ì ‘ê·¼ 
+		//ë¬¸ì œ1 . í•œë¼ì‚° ì¶œë ¥í•˜ê¸° 
 		System.out.println(map.get("a"));
 	}
 
