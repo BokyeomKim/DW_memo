@@ -1,0 +1,35 @@
+컬렉션즈~
+
+<> :  제네릭
+클래스만~
+ArrayList ,
+***HashMap 
+
+Hash란?
+key와 Value 로 이루어진 자료구조
+(json 하고 같음.)
+key 중복 x 
+Value 중복가능!
+
+
+오브젝트? 
+Object 
+
+HashMap Value 에 Object를 하는이유!
+Value 에 어떤 값(데이터 타입)이 올지 예상 불가능.
+그래서 Object 로 데이터 타입을 모두 받는다.
+
+
+
+
+
+모든 클래스는 디폴트로 Object를 상속 받는다.
+즉, Object 가 부모클래스
+
+
+
+
+
+
+
+
