@@ -25,7 +25,7 @@ public class 긴급점검2 {
 	public static void main(String[] args) {
 		// 방법 1
 		Dw d = printStudent();
-		System.out.println("방법:1"+d.className + "," + d.studentName);
+		System.out.println("방법1:"+d.className + "," + d.studentName);
 		// 방법2
 		System.out.println("방법2:"+printStudent().className);
 		System.out.println("방법2:"+printStudent().studentName);
