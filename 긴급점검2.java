@@ -1,7 +1,7 @@
 package test;
-//°á°ú È­¸é
+//ê²°ê³¼ í™”ë©´
 
-//Å¬·¡½º ÀÌ¸§ : ½º¸¶Æ®À¥ & ¾Û °úÁ¤ , ÇĞ»ıÀÌ¸§ : È«±æµ¿
+//í´ë˜ìŠ¤ ì´ë¦„ : ìŠ¤ë§ˆíŠ¸ì›¹ & ì•± ê³¼ì • , í•™ìƒì´ë¦„ : í™ê¸¸ë™
 
 class Dw {
 	String className;
@@ -17,17 +17,17 @@ class Dw {
 	}
 }
 
-public class ±ä±ŞÁ¡°Ë2 {
+public class ê¸´ê¸‰ì ê²€2 {
 	public static Dw printStudent() {
-		return new Dw("½º¸¶Æ®À¥ & ¾Û°úÁ¤", "È«±æµ¿");
+		return new Dw("ìŠ¤ë§ˆíŠ¸ì›¹ & ì•±ê³¼ì •", "í™ê¸¸ë™");
 	}
 
 	public static void main(String[] args) {
-		// ¹æ¹ı 1
+		// ë°©ë²• 1
 		Dw d = printStudent();
-		System.out.println(d.className + "," + d.studentName);
-		// ¹æ¹ı2
-		System.out.println(printStudent().className);
-		System.out.println(printStudent().studentName);
+		System.out.println("ë°©ë²•:1"+d.className + "," + d.studentName);
+		// ë°©ë²•2
+		System.out.println("ë°©ë²•2:"+printStudent().className);
+		System.out.println("ë°©ë²•2:"+printStudent().studentName);
 	}
 }
