@@ -9,18 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 //@controller : url 을 요청받는 곳 어노테이션
 @RestController
 public class MainController {
-	
+
 	@GetMapping("/index")
-	public String call(){// index하는 주소를 요청하면 call()메소드를 실행
+	public String call() {// index하는 주소를 요청하면 call()메소드를 실행
 		String word = " 준수 Helloworld ";
 		return word;
 	}
-@GetMapping("/sum")
+
+	@GetMapping("/sum")
 //http://localhost:8080/sum
-public int callSum() {
-	int x =10;
-	int y = 20;
-	return x + y; 
-}
+	public int callSum() {
+		int x = 1;
+		int y = 999;
+		return x + y;
+	}
 
 }
