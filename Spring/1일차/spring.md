@@ -162,3 +162,12 @@ controller : url 요청을 받는곳
 
 ***2. http?
 GET : 요청, 조회?
+
+
+
+lombok
+
+이클립스 lombok 인식
+lombok.jar 파일 
+git bash >
+java.jar + tab    
