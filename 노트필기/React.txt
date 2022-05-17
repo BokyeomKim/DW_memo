@@ -1,0 +1,31 @@
+react.js = > 자바스크립트 프론트 프레임 워크
+<설치방법>
+1. npm 설치
+2. react 설치 
+3.npm install -g create-react -app (cmd)
+*g:global 의 약자
+
+
+1~3 번 까지는 한번만 ,
+4번 부터는 리액트 프로젝트 만들고 싶을때 마다 해야함.
+
+
+4.react 환경 설치 
+console 창 >
+npx create-react-app myapp
+
+5.(옵션)package.json 에 필요한 기능 다운로드
+
+cd myapp
+*cd 디렉토리 이동
+
+
+6.실행 방법 
+npm run start = go live (x)
+
+패키지 설치 
+ex.)
+npm install chart.js 
+> package.json > "chart.js "
+
+
