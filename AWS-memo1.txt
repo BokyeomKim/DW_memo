@@ -1,0 +1,20 @@
+S3 (Simple Storage Service) 
+
+1. 이미지,영상 전용 서버로 많이 사용
+2. 백업 서버로 많이 사용
+3. 웹 호스팅(빌린다) 서버로 사용(v) -> (정적 웹)
+=> S3임대해서 내 HTML 을 S3 에 업로드 하겠다.
+
+특징 : 저장공간 무한
+가격 : 시간당 저장 용량만큼 가격 책정
+
+5GB 이하는 1년간 공짜
+
+-정적 웹: HTML, JS, JQuery
+-동적 웹: (웹 프레임워크 + 템플릿 엔진)
+Spring boot+ JSP
+
+차이점: DB를 연동할 수 있느냐 없느냐 의 차이
+
+http://kimjunsu.io.s3-website.ap-northeast-2.amazonaws.com
+=> 도메인 주소
